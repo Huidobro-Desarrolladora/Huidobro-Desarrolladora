@@ -386,52 +386,6 @@
         @media (max-width: 768px) { .steps { grid-template-columns: 1fr; } }
 
         /* =========================================================
-           COMPARISON TABLE — desktop
-           ========================================================= */
-        .comparison { overflow-x: auto; margin-top: var(--spacing-xl); }
-        .comparison table { width: 100%; border-collapse: collapse; background: var(--blanco); border-radius: var(--radius-lg); overflow: hidden; box-shadow: var(--shadow-sm); }
-        .comparison th, .comparison td { padding: var(--spacing-md) var(--spacing-lg); text-align: left; border-bottom: 1px solid var(--gris-humo); font-size: 0.9375rem; }
-        .comparison th { background-color: var(--azul-marina); color: var(--blanco); font-weight: 700; font-size: 0.875rem; }
-        .comparison td:first-child { font-weight: 600; color: var(--azul-noche); }
-        .comparison tr:last-child td { border-bottom: none; }
-        .comparison tr:nth-child(even) { background-color: var(--gris-humo); }
-        .icon-check { color: var(--oliva-suave); font-weight: 700; font-size: 1rem; }
-
-        /* COMPARISON CARDS — mobile only */
-        .comparison-cards { display: none; margin-top: var(--spacing-xl); flex-direction: column; gap: var(--spacing-md); }
-        .comp-card {
-            background: var(--blanco); border-radius: var(--radius-lg);
-            overflow: hidden; box-shadow: var(--shadow-sm);
-            border: 1px solid var(--color-border);
-        }
-        .comp-card-header {
-            background: var(--azul-marina); color: var(--blanco);
-            padding: 0.75rem var(--spacing-lg);
-            font-size: 0.8125rem; font-weight: 700; letter-spacing: 0.02em;
-        }
-        .comp-card-body { display: grid; grid-template-columns: 1fr 1fr; }
-        .comp-col {
-            padding: var(--spacing-md) var(--spacing-lg);
-            font-size: 0.875rem; line-height: 1.55;
-        }
-        .comp-col:first-child {
-            border-right: 1px solid var(--gris-humo);
-            color: var(--color-text-secondary);
-        }
-        .comp-col:last-child { color: var(--azul-noche); }
-        .comp-col-label {
-            font-size: 0.6875rem; font-weight: 700; letter-spacing: 0.08em;
-            text-transform: uppercase; color: var(--color-text-secondary);
-            margin-bottom: 0.375rem; display: block;
-        }
-        .comp-col:last-child .comp-col-label { color: var(--oliva-suave); }
-
-        @media (max-width: 640px) {
-            .comparison { display: none; }
-            .comparison-cards { display: flex; }
-        }
-
-        /* =========================================================
            FAQ
            ========================================================= */
         .faq-item {
@@ -634,7 +588,7 @@
             <div class="hero-content">
                 <p class="hero-tagline">Desarrollo inmobiliario basado en datos</p>
                 <h1>El Mismo Terreno,<br>Mejor Negocio</h1>
-                <p class="hero-subtitle">Cada metro cuadrado que hoy no vendes es utilidad que dejas ir. Nosotros lo recuperamos.</p>
+                <p class="hero-subtitle">La rentabilidad de tu proyecto se define antes de diseñar: en la cabida, en el producto correcto y en un expediente sin errores. Nosotros integramos las tres cosas.</p>
                 <div class="hero-cta-group">
                     <!-- REPLACE: Reemplazar #calendly-link con tu enlace de Calendly o WhatsApp -->
                     <a href="https://cal.com/miguel-angel-huidobro/30min" target="_blank" rel="noopener" class="btn btn-primary">Conversemos Sobre Tu Proyecto</a>
@@ -652,30 +606,30 @@
     <section class="section section-gris">
         <div class="container">
             <div class="section-header">
-                <h2>¿Tu proyecto está dejando<br>dinero sobre la mesa?</h2>
+                <h2>¿Dónde se está yendo la rentabilidad<br>de tu proyecto?</h2>
                 <div class="accent-line"></div>
             </div>
 
             <div class="pain-grid">
                 <div class="pain-card fade-on-scroll">
                     <div class="pain-card-number">01</div>
-                    <h4>Áreas muertas que reducen ingresos</h4>
-                    <p>Pasadizos excesivos, ductos mal ubicados y circulaciones no optimizadas reducen tu área vendible y, por tanto, tu ingreso bruto. Ese espacio no vendible es dinero que pierdes.</p>
+                    <h4>Una cabida que no te dice si el negocio funciona</h4>
+                    <p>Sabes cuántos metros cuadrados caben en tu terreno. Pero si no sabes si lo que cabe se vende, a qué precio ni a qué velocidad, estás avanzando con la pregunta más importante sin responder.</p>
                 </div>
                 <div class="pain-card fade-on-scroll">
                     <div class="pain-card-number">02</div>
-                    <h4>Decisiones sin datos de mercado</h4>
-                    <p>¿Qué tipologías demanda el mercado? ¿Cuál es el precio que puedes sostener? Las decisiones sin respaldo de datos llevan a proyectos con márgenes reducidos o lenta rotación.</p>
+                    <h4>Metros cuadrados que no generan ingresos</h4>
+                    <p>Tu proyecto tiene área construida que no puedes vender: circulaciones, espacios residuales, distribuciones que no se cuestionaron a tiempo. Cada metro que no es vendible es utilidad que se pierde.</p>
                 </div>
                 <div class="pain-card fade-on-scroll">
                     <div class="pain-card-number">03</div>
-                    <h4>Incompatibilidades y rediseños en obra</h4>
-                    <p>Proyectos que llegan a obra sin coordinar especialidades generan conflictos, observaciones municipales y cambios costosos. El BIM no es lujo, es necesidad.</p>
+                    <h4>Errores que se pagan caro en obra</h4>
+                    <p>Corregir un error en etapa de diseño cuesta entre 10% y 15% de sobrecosto. Corregirlo en obra, entre 30% y 40%. La diferencia entre ambos escenarios es la compatibilización que tu expediente técnico debería tener antes de llegar a campo.</p>
                 </div>
             </div>
 
             <p class="pain-closing fade-on-scroll">
-                Si te identificas con alguno de estos problemas, no estás solo.<br>La mayoría de inmobiliarias en crecimiento enfrentan estos desafíos — y tienen solución.
+                Y hay un costo que pocos ven: un diseño mal resuelto no solo te cobra en obra — te cobra después, en postventa.<br>Reclamos, reparaciones e incidencias que drenan la utilidad del proyecto meses después de la entrega. Estos problemas tienen solución, y empieza antes de diseñar.
             </p>
         </div>
     </section>
@@ -684,7 +638,7 @@
     <section class="section">
         <div class="container">
             <p class="clarity-statement fade-on-scroll">
-                Ayudamos a <strong>inmobiliarias en crecimiento</strong> a <strong>maximizar la rentabilidad de sus proyectos</strong>: sabemos qué quiere el mercado, aprovechamos cada metro cuadrado del terreno y entregamos un proyecto listo para obra sin conflictos entre planos.
+                Ayudamos a <strong>inmobiliarias en crecimiento</strong> a <strong>tomar mejores decisiones antes de construir</strong>: validamos el negocio con datos de mercado, maximizamos cada metro vendible del terreno y entregamos un proyecto que no te genera sobrecostos en obra.
             </p>
         </div>
     </section>
@@ -722,8 +676,8 @@
                             <path d="M28,26 L38,26 L38,38 L28,38 Z" fill="currentColor" opacity="0.15"/>
                         </svg>
                     </div>
-                    <h3>Maximización de área vendible</h3>
-                    <p>Reducimos áreas muertas y maximizamos el ratio de eficiencia de planta. Más área vendible en el mismo terreno se traduce directamente en mayor utilidad para tu proyecto.</p>
+                    <h3>Diseño que maximiza tu ingreso bruto</h3>
+                    <p>Cada metro cuadrado que no puedes vender reduce tu utilidad. Trabajamos la planta para que la mayor proporción posible del área construida sea vendible — más departamentos, mejor distribuidos, en el mismo terreno.</p>
                 </div>
                 <div class="card fade-on-scroll">
                     <div class="card-icon">
@@ -736,8 +690,8 @@
                             <line x1="4" y1="40" x2="44" y2="40"/>
                         </svg>
                     </div>
-                    <h3>Expediente técnico 100% compatibilizado</h3>
-                    <p>Proyectos 100% compatibilizados entre todas las especialidades. Cero sorpresas en obra, menos conflictos, más rentabilidad.</p>
+                    <h3>Expediente técnico que protege tu utilidad</h3>
+                    <p>Un expediente con errores entre especialidades se paga en obra: sobrecostos de 30% a 40% en las partidas afectadas. Entregamos un proyecto compatibilizado con metodología BIM para que esos costos se resuelvan en pantalla, no en campo.</p>
                 </div>
             </div>
         </div>
@@ -809,7 +763,7 @@
             <div class="steps">
                 <div class="step fade-on-scroll">
                     <h4>Estudio de cabida</h4>
-                    <p>¿Cuánto vale realmente tu terreno? Evaluamos su potencial bajo la normativa vigente para que sepas exactamente qué puedes construir, antes de invertir en diseño. Este es el punto de partida de toda buena decisión.</p>
+                    <p>Antes de comprometerte con el diseño, sabes si el negocio funciona. Evaluamos tu terreno integrando normativa, datos de mercado y números del proyecto para que tu decisión esté respaldada por los tres — no solo por los metros cuadrados que caben.</p>
                 </div>
                 <div class="step fade-on-scroll">
                     <h4>Análisis de mercado y definición de producto</h4>
@@ -827,78 +781,8 @@
         </div>
     </section>
 
-    <!-- DIFERENCIADORES -->
-    <section class="section section-gris">
-        <div class="container">
-            <div class="section-header">
-                <h2>¿Por qué trabajar con nosotros?</h2>
-                <div class="accent-line"></div>
-            </div>
-            <div class="comparison fade-on-scroll">
-                <table>
-                    <thead>
-                        <tr>
-                            <th>Aspecto</th>
-                            <th>Sin Socio Estratégico</th>
-                            <th>Con HUIDOBRO Desarrolladora</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr><td>Primer Contacto</td><td>Te comprometes con un estudio sin saber si es el indicado</td><td><span class="icon-check">&#10003;</span> Empezamos con un estudio de cabida: conoces nuestra capacidad antes de decidir</td></tr>
-                        <tr><td>Decisión de Producto</td><td>Se define por experiencia pasada o intuición del proyectista</td><td><span class="icon-check">&#10003;</span> Se define con data real del mercado — lo que se vende rápido en tu zona</td></tr>
-                        <tr><td>Visión del Proyecto</td><td>Cada proveedor ve solo su parte, nadie integra diseño, datos y normativa</td><td><span class="icon-check">&#10003;</span> Un solo equipo donde diseño, datos de mercado y normativa trabajan juntos desde el día uno</td></tr>
-                        <tr><td>Eficiencia de Planta</td><td>Áreas muertas que nadie cuestiona</td><td><span class="icon-check">&#10003;</span> Cada metro cuadrado trabaja a favor de tu utilidad</td></tr>
-                        <tr><td>Compatibilidad</td><td>Sorpresas en obra, rediseños costosos, plazos que se extienden</td><td><span class="icon-check">&#10003;</span> Expediente BIM listo para construir, sin conflictos entre planos</td></tr>
-                    </tbody>
-                </table>
-            </div>
 
-            <!-- MOBILE: cards version -->
-            <div class="comparison-cards fade-on-scroll">
 
-                <div class="comp-card">
-                    <div class="comp-card-header">Primer Contacto</div>
-                    <div class="comp-card-body">
-                        <div class="comp-col"><span class="comp-col-label">Sin Socio Estratégico</span>Te comprometes con un estudio sin saber si es el indicado</div>
-                        <div class="comp-col"><span class="comp-col-label">Con HUIDOBRO</span><span class="icon-check">&#10003;</span> Empezamos con un estudio de cabida: conoces nuestra capacidad antes de decidir</div>
-                    </div>
-                </div>
-
-                <div class="comp-card">
-                    <div class="comp-card-header">Decisión de Producto</div>
-                    <div class="comp-card-body">
-                        <div class="comp-col"><span class="comp-col-label">Sin Socio Estratégico</span>Se define por experiencia pasada o intuición del proyectista</div>
-                        <div class="comp-col"><span class="comp-col-label">Con HUIDOBRO</span><span class="icon-check">&#10003;</span> Se define con data real del mercado — lo que se vende rápido en tu zona</div>
-                    </div>
-                </div>
-
-                <div class="comp-card">
-                    <div class="comp-card-header">Visión del Proyecto</div>
-                    <div class="comp-card-body">
-                        <div class="comp-col"><span class="comp-col-label">Sin Socio Estratégico</span>Cada proveedor ve solo su parte, nadie integra diseño, datos y normativa</div>
-                        <div class="comp-col"><span class="comp-col-label">Con HUIDOBRO</span><span class="icon-check">&#10003;</span> Un solo equipo donde diseño, datos y normativa trabajan juntos desde el día uno</div>
-                    </div>
-                </div>
-
-                <div class="comp-card">
-                    <div class="comp-card-header">Eficiencia de Planta</div>
-                    <div class="comp-card-body">
-                        <div class="comp-col"><span class="comp-col-label">Sin Socio Estratégico</span>Áreas muertas que nadie cuestiona</div>
-                        <div class="comp-col"><span class="comp-col-label">Con HUIDOBRO</span><span class="icon-check">&#10003;</span> Cada metro cuadrado trabaja a favor de tu utilidad</div>
-                    </div>
-                </div>
-
-                <div class="comp-card">
-                    <div class="comp-card-header">Compatibilidad</div>
-                    <div class="comp-card-body">
-                        <div class="comp-col"><span class="comp-col-label">Sin Socio Estratégico</span>Sorpresas en obra, rediseños costosos, plazos que se extienden</div>
-                        <div class="comp-col"><span class="comp-col-label">Con HUIDOBRO</span><span class="icon-check">&#10003;</span> Expediente BIM listo para construir, sin conflictos entre planos</div>
-                    </div>
-                </div>
-
-            </div>
-        </div>
-    </section>
 
     <!-- FAQ -->
     <section id="faq" class="section">
@@ -911,7 +795,7 @@
                 <div class="faq-item fade-on-scroll"><div class="faq-question"><span>¿No es duplicar costos si ya tengo un proyectista?</span><span class="faq-toggle"><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="5,7 10,13 15,7"/></svg></span></div><div class="faq-answer"><p>No se duplica porque no trabajamos encima de otro estudio: nos encargamos del diseño completo. Huidobro desarrolla el anteproyecto optimizado y el expediente técnico BIM, cubriendo lo que normalmente harías con un estudio de arquitectura externo. La diferencia es que además integramos análisis de mercado con data real y maximización de áreas vendibles desde el inicio. No pagas doble — pagas una vez por un servicio más completo.</p></div></div>
                 <div class="faq-item fade-on-scroll"><div class="faq-question"><span>¿Cómo mido el retorno de su servicio?</span><span class="faq-toggle"><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="5,7 10,13 15,7"/></svg></span></div><div class="faq-answer"><p>En los números que importan: el ratio de eficiencia de planta (m² vendibles / m² totales del proyecto) y el alineamiento del producto con la demanda real del mercado. Más área vendible en el mismo terreno es más ingreso bruto. Un producto definido con data es un producto que se vende más rápido. Ambos impactan directamente tu rentabilidad.</p></div></div>
                 <div class="faq-item fade-on-scroll"><div class="faq-question"><span>¿Qué incluye exactamente el paquete integral?</span><span class="faq-toggle"><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="5,7 10,13 15,7"/></svg></span></div><div class="faq-answer"><p>Tres servicios que trabajan juntos: análisis de mercado con data real para definir el producto correcto, optimización del anteproyecto para maximizar áreas vendibles, y desarrollo del expediente técnico con metodología BIM 100% compatibilizado entre todas las especialidades. Entregas un proyecto listo para construcción.</p></div></div>
-                <div class="faq-item fade-on-scroll"><div class="faq-question"><span>¿Puedo contratar solo el estudio de cabida?</span><span class="faq-toggle"><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="5,7 10,13 15,7"/></svg></span></div><div class="faq-answer"><p>Sí. El estudio de cabida funciona como un primer paso independiente. Evaluamos el potencial de tu terreno bajo la normativa vigente para que tengas claridad sobre qué puedes construir. Si después decides avanzar con el paquete integral, continuamos desde ahí.</p></div></div>
+                <div class="faq-item fade-on-scroll"><div class="faq-question"><span>¿Puedo contratar solo el estudio de cabida?</span><span class="faq-toggle"><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="5,7 10,13 15,7"/></svg></span></div><div class="faq-answer"><p>Sí. Si estás evaluando un terreno y necesitas saber si el proyecto tiene sentido antes de avanzar, la cabida es exactamente el punto de partida. No es solo un ejercicio normativo: integramos datos de mercado y los números del negocio para que tengas claridad sobre el potencial real del terreno. Si después decides continuar con el paquete integral, seguimos desde ahí.</p></div></div>
                 <div class="faq-item fade-on-scroll"><div class="faq-question"><span>¿Qué pasa si ya tengo un anteproyecto avanzado?</span><span class="faq-toggle"><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="5,7 10,13 15,7"/></svg></span></div><div class="faq-answer"><p>Podemos entrar en cualquier momento del proceso. Si ya tienes un anteproyecto desarrollado por otro estudio, lo evaluamos y trabajamos sobre esa base para optimizar áreas vendibles, validar el producto contra datos de mercado y desarrollar el expediente técnico BIM compatibilizado.</p></div></div>
                 <div class="faq-item fade-on-scroll"><div class="faq-question"><span>¿Cuánto tiempo toma el proceso?</span><span class="faq-toggle"><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="5,7 10,13 15,7"/></svg></span></div><div class="faq-answer"><p>Un estudio de cabida se entrega en aproximadamente 1 semana. El paquete integral — desde el análisis de mercado hasta la entrega del expediente técnico BIM — toma entre 3 y 4 meses, dependiendo del tamaño y complejidad del proyecto. Cada etapa tiene hitos claros y fechas comprometidas.</p></div></div>
                 <div class="faq-item fade-on-scroll"><div class="faq-question"><span>¿Trabajan solo en Lima?</span><span class="faq-toggle"><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="5,7 10,13 15,7"/></svg></span></div><div class="faq-answer"><p>Actualmente nos enfocamos en Lima Metropolitana, donde conocemos profundamente la normativa, el mercado y los actores relevantes. Si tienes proyectos en otras ciudades del Perú, conversemos: podríamos explorar oportunidades caso a caso.</p></div></div>
