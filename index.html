@@ -12,7 +12,9 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="HUIDOBRO Desarrolladora — Maximiza la rentabilidad de tus proyectos inmobiliarios con análisis de mercado, diseño optimizado y expediente técnico BIM.">
     <meta name="theme-color" content="#0D1221">
-    <title>HUIDOBRO Desarrolladora | El Mismo Terreno, Mejor Negocio</title>
+    <title>HUIDOBRO Desarrolladora | Revisa si el negocio funciona antes de construir</title>
+
+    <script defer src="/_vercel/insights/script.js"></script>
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -163,14 +165,6 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
             border-radius: 50%; filter: blur(40px);
         }
         .hero-content { position: relative; z-index: 2; max-width: 800px; }
-        .hero-tagline {
-            font-size: 0.8125rem; font-weight: 500; color: var(--oliva-suave);
-            letter-spacing: 0.12em; text-transform: uppercase;
-            margin-bottom: var(--spacing-lg);
-            display: inline-flex; align-items: center; gap: 0.75rem;
-            animation: fadeInUp 0.7s ease-out;
-        }
-        .hero-tagline::before { content: ''; width: 24px; height: 1px; background: var(--oliva-suave); }
         .hero h1 {
             font-size: clamp(3rem, 7vw, 4.5rem); font-weight: 800;
             color: var(--blanco); line-height: 1.05; letter-spacing: -0.03em;
@@ -194,6 +188,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         }
         .hero-trust span { display: flex; align-items: center; gap: 0.5rem; }
         .trust-dot { width: 5px; height: 5px; background: var(--oliva-suave); border-radius: 50%; }
+        .btn-secondary-hero { background: transparent; color: var(--blanco); border: 1.5px solid rgba(255,255,255,0.35); }
+        .btn-secondary-hero:hover { background: var(--blanco); color: var(--azul-noche); border-color: var(--blanco); }
 
         @media (max-width: 768px) {
             .hero { min-height: 75vh; padding: var(--spacing-2xl) 0; }
@@ -227,7 +223,11 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         .pain-card h4 { margin-bottom: var(--spacing-sm); line-height: 1.3; }
         .pain-card p { margin: 0; font-size: 0.9375rem; }
 
-        .pain-closing { text-align: center; margin-top: var(--spacing-2xl); font-weight: 500; color: var(--azul-marina); font-size: 0.9375rem; }
+        .pain-card-cta { display: flex; flex-direction: column; gap: 0.375rem; margin-top: var(--spacing-md); padding-top: var(--spacing-md); border-top: 1px solid rgba(13,18,33,0.08); }
+        .pain-card-cta a { font-size: 0.8125rem; font-weight: 600; color: var(--azul-marina); }
+        .pain-card:hover .pain-card-cta { border-top-color: rgba(255,255,255,0.15); }
+        .pain-card:hover .pain-card-cta a { color: var(--blanco); }
+        .pain-card:hover .pain-card-cta a:hover { color: var(--arena-calida); }
 
         /* =========================================================
            ECUACIÓN DE CLARIDAD
@@ -242,6 +242,23 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
             background: linear-gradient(to top, rgba(107,122,99,0.15) 30%, transparent 30%);
             padding: 0 0.1em;
         }
+
+        /* =========================================================
+           ESTUDIO DE CABIDA
+           ========================================================= */
+        .cabida-box {
+            background: var(--gris-humo); border-radius: var(--radius-xl);
+            padding: var(--spacing-2xl); display: grid;
+            grid-template-columns: auto 1fr; gap: var(--spacing-2xl); align-items: start;
+        }
+        .cabida-badge {
+            display: inline-flex; align-items: center; justify-content: center;
+            background: var(--oliva-suave); color: var(--blanco);
+            font-weight: 700; font-size: 0.9375rem; padding: 0.5rem 1.25rem;
+            border-radius: 100px; white-space: nowrap;
+        }
+        .cabida-box-content h2 { margin-bottom: var(--spacing-md); }
+        @media (max-width: 768px) { .cabida-box { grid-template-columns: 1fr; } }
 
         /* =========================================================
            CARDS (Services)
@@ -264,109 +281,66 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         .card p { margin-bottom: 0; font-size: 0.9375rem; }
 
         /* =========================================================
-           CASE STUDIES — Vertical image with slide-in overlay
+           CASO DESTACADO — Parque Acosta (ancho completo, sin hover)
            ========================================================= */
-        .cases-grid {
-            display: grid; grid-template-columns: repeat(2, 1fr);
-            gap: var(--spacing-xl); margin-top: var(--spacing-xl);
+        .case-feature {
+            display: grid; grid-template-columns: minmax(0,1fr) minmax(0,1.1fr);
+            gap: var(--spacing-2xl); align-items: center;
+            background: var(--blanco); border-radius: var(--radius-xl);
+            overflow: hidden; box-shadow: var(--shadow-lg);
         }
-        @media (max-width: 768px) {
-            .cases-grid { grid-template-columns: 1fr; max-width: 440px; margin-left: auto; margin-right: auto; }
-        }
-
-        /* Desktop: fixed aspect ratio, hover interaction */
-        .case-card {
-            position: relative; border-radius: var(--radius-xl);
-            overflow: hidden; cursor: pointer;
-            aspect-ratio: 3 / 4;
-        }
-        .case-card img {
-            width: 100%; height: 100%; object-fit: cover; display: block;
-            transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
-        }
-        .case-card:hover img { transform: scale(1.03); }
-
-        /* Nombre del proyecto siempre visible en la parte inferior */
-        .case-card-label-fixed {
-            position: absolute; bottom: 0; left: 0; right: 0; z-index: 2;
-            padding: var(--spacing-lg); padding-top: var(--spacing-3xl);
-            background: linear-gradient(to top, rgba(13,18,33,0.7) 0%, transparent 100%);
-            transition: opacity 0.4s ease;
-        }
-        .case-card-label-fixed h3 { color: var(--blanco); font-size: 1.5rem; margin-bottom: 0.25rem; }
-        .case-card-label-fixed p { color: rgba(255,255,255,0.7); font-size: 0.875rem; margin: 0; }
-        .case-card:hover .case-card-label-fixed { opacity: 0; }
-
-        /* Overlay que se desliza de izquierda a derecha (desktop) */
-        .case-card-overlay {
-            position: absolute; inset: 0; z-index: 3;
-            background: rgba(255,255,255,0.92);
-            backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px);
-            padding: var(--spacing-xl);
-            display: flex; flex-direction: column; justify-content: center;
-            transform: translateX(-100%);
-            transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
-        }
-        .case-card:hover .case-card-overlay { transform: translateX(0); }
-
-        /* Mobile: card restructurada — imagen encima, contenido debajo */
-        @media (max-width: 768px) {
-            .case-card {
-                aspect-ratio: unset;
-                display: flex; flex-direction: column;
-                overflow: visible;
-                background: var(--blanco);
-                border-radius: var(--radius-xl);
-                box-shadow: var(--shadow-md);
-            }
-            .case-card img {
-                width: 100%; height: 220px; object-fit: cover;
-                border-radius: var(--radius-xl) var(--radius-xl) 0 0;
-                flex-shrink: 0;
-            }
-            .case-card:hover img { transform: none; }
-            .case-card-label-fixed { display: none; }
-            .case-card-overlay {
-                position: static;
-                transform: none !important;
-                background: var(--blanco);
-                backdrop-filter: none; -webkit-backdrop-filter: none;
-                padding: var(--spacing-lg);
-                border-radius: 0 0 var(--radius-xl) var(--radius-xl);
-                justify-content: flex-start;
-            }
-        }
-
-        .case-card-overlay .case-label {
+        .case-feature img { width: 100%; height: 100%; object-fit: cover; display: block; min-height: 320px; }
+        .case-feature-content { padding: var(--spacing-2xl) var(--spacing-2xl) var(--spacing-2xl) 0; }
+        .case-feature-label {
             font-size: 0.6875rem; font-weight: 600; letter-spacing: 0.1em;
             text-transform: uppercase; color: var(--oliva-suave); margin-bottom: var(--spacing-xs);
         }
-        .case-card-overlay .case-title {
-            font-size: 1.375rem; font-weight: 800; color: var(--azul-marina);
+        .case-feature-title {
+            font-size: 1.75rem; font-weight: 800; color: var(--azul-marina);
             margin-bottom: 0.25rem; line-height: 1.2; letter-spacing: -0.02em;
         }
-        .case-card-overlay .case-subtitle {
-            font-size: 0.8125rem; color: var(--color-text-secondary); margin-bottom: var(--spacing-md);
-        }
-        .case-card-overlay .case-metric {
-            font-size: 2.25rem; font-weight: 800; color: var(--azul-marina);
+        .case-feature-subtitle { font-size: 0.9375rem; color: var(--color-text-secondary); margin-bottom: var(--spacing-lg); }
+        .case-feature-metric {
+            font-size: 3rem; font-weight: 800; color: var(--azul-marina);
             letter-spacing: -0.03em; line-height: 1; margin-bottom: 0.25rem;
         }
-        .case-card-overlay .case-metric-label {
-            font-size: 0.75rem; font-weight: 600; color: var(--azul-noche); margin-bottom: var(--spacing-md);
+        .case-feature-metric-label { font-size: 0.8125rem; font-weight: 600; color: var(--azul-noche); margin-bottom: var(--spacing-lg); }
+        .case-feature-desc { font-size: 0.9375rem; color: var(--color-text-secondary); line-height: 1.7; margin-bottom: var(--spacing-lg); }
+        .case-feature-checks {
+            display: flex; flex-direction: column; gap: 0.5rem;
+            border-top: 1px solid var(--color-border); padding-top: var(--spacing-md); margin-bottom: var(--spacing-md);
         }
-        .case-card-overlay .case-desc {
-            font-size: 0.8125rem; color: var(--color-text-secondary);
-            line-height: 1.65; margin-bottom: var(--spacing-md);
+        .case-feature-checks span { font-size: 0.875rem; color: var(--color-text-secondary); }
+        .case-feature-checks .check-icon { color: var(--oliva-suave); font-weight: 700; margin-right: 0.3rem; }
+        .case-feature-role { font-size: 0.875rem; font-weight: 600; color: var(--azul-marina); margin-bottom: var(--spacing-sm); }
+        .case-feature-fineprint { font-size: 0.75rem; color: var(--color-text-secondary); opacity: 0.75; margin-bottom: var(--spacing-md); }
+        .case-feature-cta { display: flex; flex-wrap: wrap; gap: var(--spacing-sm); }
+        @media (max-width: 900px) {
+            .case-feature { grid-template-columns: 1fr; }
+            .case-feature img { min-height: 240px; }
+            .case-feature-content { padding: var(--spacing-lg); }
         }
-        .case-card-overlay .case-checks {
-            display: flex; flex-direction: column; gap: 0.375rem;
-            border-top: 1px solid var(--color-border); padding-top: var(--spacing-sm);
+
+        /* =========================================================
+           QUIÉN ESTÁ DETRÁS
+           ========================================================= */
+        .persona-card { display: flex; gap: var(--spacing-xl); align-items: flex-start; max-width: 900px; margin: 0 auto; }
+        /* Retrato de cuerpo entero: se muestra completo, sin recorte.
+           Por eso ancho fijo y alto automático, nunca object-fit: cover. */
+        .persona-photo {
+            flex-shrink: 0; width: 300px; max-width: 100%;
+            border-radius: var(--radius-lg); overflow: hidden;
+            background: var(--gris-humo);
         }
-        .case-card-overlay .case-checks span {
-            font-size: 0.8125rem; color: var(--color-text-secondary);
-        }
-        .case-card-overlay .check-icon { color: var(--oliva-suave); font-weight: 700; margin-right: 0.3rem; }
+        .persona-photo img { display: block; width: 100%; height: auto; }
+        .persona-eyebrow { font-size: 0.75rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--oliva-suave); margin-bottom: var(--spacing-xs); }
+        .persona-name { margin-bottom: 0.25rem; }
+        .persona-role { color: var(--color-text-secondary); font-size: 0.9375rem; margin-bottom: var(--spacing-md); }
+        .persona-credentials { list-style: none; display: flex; flex-direction: column; gap: 0.5rem; margin-bottom: var(--spacing-md); }
+        .persona-credentials li { font-size: 0.9375rem; color: var(--color-text-secondary); line-height: 1.6; }
+        .persona-credentials .check-icon { color: var(--oliva-suave); font-weight: 700; margin-right: 0.4rem; }
+        .persona-bio { font-size: 0.9375rem; margin-bottom: 0; }
+        @media (max-width: 768px) { .persona-card { flex-direction: column; align-items: center; text-align: center; } }
 
         /* =========================================================
            PROCESS STEPS — 2x2 Grid
@@ -391,6 +365,31 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         .step h4 { margin-bottom: var(--spacing-xs); }
         .step p { margin-bottom: 0; font-size: 0.9375rem; }
         @media (max-width: 768px) { .steps { grid-template-columns: 1fr; } }
+
+        /* =========================================================
+           GUÍAS DESCARGABLES
+           ========================================================= */
+        .guia-card { background: var(--blanco); border-radius: var(--radius-lg); padding: var(--spacing-xl); border: 1px solid var(--color-border); }
+        .guia-card h3 { margin-bottom: var(--spacing-xs); }
+        /* La serie está numerada de verdad (01-04), así que el número informa el orden de lectura. */
+        .guia-num {
+            display: block; font-size: 0.75rem; font-weight: 700; letter-spacing: 0.12em;
+            color: var(--oliva-suave); margin-bottom: var(--spacing-xs);
+            font-variant-numeric: tabular-nums;
+        }
+        .guia-card .guia-abrir { margin-top: var(--spacing-md); align-self: flex-start; }
+        .guia-card.abierta .guia-abrir { display: none; }
+        .guia-form { display: none; flex-direction: column; gap: var(--spacing-sm); margin-top: var(--spacing-md); }
+        .guia-card.abierta .guia-form { display: flex; }
+        .guia-form input, .guia-form select {
+            font-family: var(--font); font-size: 0.9375rem; padding: 0.75rem 1rem;
+            border: 1px solid var(--color-border); border-radius: var(--radius-sm);
+            background: var(--gris-humo); color: var(--color-text);
+        }
+        .guia-form button { margin-top: var(--spacing-xs); }
+        .guia-form-status { font-size: 0.8125rem; margin: 0; min-height: 1.2em; }
+        .guia-form-status.ok { color: var(--oliva-suave); font-weight: 600; }
+        .guia-form-status.error { color: #B33A3A; font-weight: 600; }
 
         /* =========================================================
            FAQ
@@ -586,9 +585,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             <div class="navbar-nav">
                 <a href="#servicios">Servicios</a>
                 <a href="#proceso">Proceso</a>
+                <a href="#guias">Guías</a>
                 <a href="#faq">Preguntas</a>
-                <!-- REPLACE: Reemplazar #calendly-link con tu enlace de Calendly o WhatsApp -->
-                <a href="https://cal.com/miguel-angel-huidobro/30min" target="_blank" rel="noopener" class="btn">Conversemos</a>
+                <a href="https://cal.com/miguel-angel-huidobro/30min" target="_blank" rel="noopener" class="btn" onclick="trackCTA('navbar_agendar','navbar')">Conversemos</a>
             </div>
         </div>
     </nav>
@@ -597,12 +596,11 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <section class="hero">
         <div class="container">
             <div class="hero-content">
-                <p class="hero-tagline">Desarrollo inmobiliario basado en datos</p>
                 <h1>El Mismo Terreno,<br>Mejor Negocio</h1>
-                <p class="hero-subtitle">La rentabilidad de tu proyecto se define antes de diseñar: en la cabida, en el producto correcto y en un expediente sin errores. Nosotros integramos las tres cosas.</p>
+                <p class="hero-subtitle">Antes de construir, revisamos si el proyecto es rentable, si el diseño aprovecha cada metro y si llega a obra sin sorpresas de última hora.</p>
                 <div class="hero-cta-group">
-                    <!-- REPLACE: Reemplazar #calendly-link con tu enlace de Calendly o WhatsApp -->
-                    <a href="https://cal.com/miguel-angel-huidobro/30min" target="_blank" rel="noopener" class="btn btn-primary">Conversemos Sobre Tu Proyecto</a>
+                    <a href="https://cal.com/miguel-angel-huidobro/30min" target="_blank" rel="noopener" class="btn btn-primary" onclick="trackCTA('hero_agendar','hero')">Conversemos Sobre Tu Proyecto</a>
+                    <a href="https://wa.me/51997555885?text=Hola%2C%20quiero%20conversar%20sobre%20mi%20proyecto.%20(ref%3A%20hero)" target="_blank" rel="noopener" class="btn btn-secondary-hero" onclick="trackCTA('hero_whatsapp','hero')">Escribir por WhatsApp</a>
                 </div>
                 <div class="hero-trust">
                     <span><span class="trust-dot"></span>Llamada breve</span>
@@ -613,35 +611,43 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         </div>
     </section>
 
-    <!-- PAIN POINTS -->
+    <!-- ¿EN QUÉ MOMENTO ESTÁS? -->
     <section class="section section-gris">
         <div class="container">
             <div class="section-header">
-                <h2>¿Dónde se está yendo la rentabilidad<br>de tu proyecto?</h2>
+                <h2>¿En qué momento estás?</h2>
                 <div class="accent-line"></div>
             </div>
 
             <div class="pain-grid">
                 <div class="pain-card fade-on-scroll">
                     <div class="pain-card-number">01</div>
-                    <h4>Una cabida que no te dice si el negocio funciona</h4>
-                    <p>Sabes cuántos metros cuadrados caben en tu terreno. Pero si no sabes si lo que cabe se vende, a qué precio ni a qué velocidad, estás avanzando con la pregunta más importante sin responder.</p>
+                    <h4>"Me pasaron un terreno y no sé si a ese precio me da"</h4>
+                    <p>Antes de avanzar, revisamos la cabida y el valor real del terreno: cuánto puedes pagar por él sin comprometer el negocio.</p>
+                    <div class="pain-card-cta">
+                        <a href="#cabida" onclick="trackCTA('puerta01_cabida','puerta-01')">Ver el estudio de cabida &rarr;</a>
+                        <a href="#guias" onclick="trackCTA('puerta01_guia','puerta-01')">Descargar guía de Valuación</a>
+                    </div>
                 </div>
                 <div class="pain-card fade-on-scroll">
                     <div class="pain-card-number">02</div>
-                    <h4>Metros cuadrados que no generan ingresos</h4>
-                    <p>Tu proyecto tiene área construida que no puedes vender: circulaciones, espacios residuales, distribuciones que no se cuestionaron a tiempo. Cada metro que no es vendible es utilidad que se pierde.</p>
+                    <h4>"El proyecto me salió más chico de lo que pensé"</h4>
+                    <p>Revisamos el diseño para encontrar los metros vendibles que se perdieron en el camino, antes de que el permiso los deje fijos.</p>
+                    <div class="pain-card-cta">
+                        <a href="#servicios" onclick="trackCTA('puerta02_servicios','puerta-02')">Ver optimización de proyecto &rarr;</a>
+                        <a href="#guias" onclick="trackCTA('puerta02_guia','puerta-02')">Descargar guía de Cabida</a>
+                    </div>
                 </div>
                 <div class="pain-card fade-on-scroll">
                     <div class="pain-card-number">03</div>
-                    <h4>Errores que se pagan caro en obra</h4>
-                    <p>Corregir un error en etapa de diseño cuesta entre 10% y 15% de sobrecosto. Corregirlo en obra, entre 30% y 40%. La diferencia entre ambos escenarios es la compatibilización que tu expediente técnico debería tener antes de llegar a campo.</p>
+                    <h4>"Pararon dos semanas esperando al proyectista"</h4>
+                    <p>Un expediente técnico compatibilizado antes de obra evita las paradas que cuestan en tiempo y en plata.</p>
+                    <div class="pain-card-cta">
+                        <a href="https://wa.me/51997555885?text=Hola%2C%20quiero%20conversar%20sobre%20mi%20expediente%20t%C3%A9cnico.%20(ref%3A%20puerta-03)" target="_blank" rel="noopener" onclick="trackCTA('puerta03_whatsapp','puerta-03')">Hablar por WhatsApp &rarr;</a>
+                        <a href="https://cal.com/miguel-angel-huidobro/30min" target="_blank" rel="noopener" onclick="trackCTA('puerta03_agendar','puerta-03')">Agendar llamada</a>
+                    </div>
                 </div>
             </div>
-
-            <p class="pain-closing fade-on-scroll">
-                Y hay un costo que pocos ven: un diseño mal resuelto no solo te cobra en obra — te cobra después, en postventa.<br>Reclamos, reparaciones e incidencias que drenan la utilidad del proyecto meses después de la entrega. Estos problemas tienen solución, y empieza antes de diseñar.
-            </p>
         </div>
     </section>
 
@@ -651,6 +657,26 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             <p class="clarity-statement fade-on-scroll">
                 Ayudamos a <strong>inmobiliarias en crecimiento</strong> a <strong>tomar mejores decisiones antes de construir</strong>: validamos el negocio con datos de mercado, maximizamos cada metro vendible del terreno y entregamos un proyecto que no te genera sobrecostos en obra.
             </p>
+        </div>
+    </section>
+
+    <!-- ESTUDIO DE CABIDA -->
+    <section id="cabida" class="section">
+        <div class="container">
+            <div class="cabida-box fade-on-scroll">
+                <div class="cabida-box-meta">
+                    <span class="cabida-badge">1 semana</span>
+                </div>
+                <div class="cabida-box-content">
+                    <h2>Estudio de cabida</h2>
+                    <p>Antes de comprometerte con un proyecto completo, revisamos si el terreno da el negocio que piensas: cuánto cabe, a qué costo y con qué velocidad de venta.</p>
+                    <p>Es la puerta de entrada: no reemplaza el paquete integral, lo antecede. Si después decides seguir, continuamos desde ahí.</p>
+                    <div class="hero-cta-group" style="margin-bottom:0;">
+                        <a href="https://wa.me/51997555885?text=Hola%2C%20quiero%20informaci%C3%B3n%20sobre%20el%20estudio%20de%20cabida.%20(ref%3A%20cabida)" target="_blank" rel="noopener" class="btn btn-primary" onclick="trackCTA('cabida_whatsapp','cabida')">Consultar por WhatsApp</a>
+                        <a href="#guias" class="btn btn-secondary" onclick="trackCTA('cabida_guia','cabida')">Descargar guía de Cabida</a>
+                    </div>
+                </div>
+            </div>
         </div>
     </section>
 
@@ -708,7 +734,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         </div>
     </section>
 
-    <!-- CASOS DE ÉXITO -->
+    <!-- CASO PARQUE ACOSTA -->
     <section class="section section-arena">
         <div class="container">
             <div class="section-header">
@@ -716,49 +742,48 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                 <div class="accent-line"></div>
             </div>
 
-            <div class="cases-grid">
-                <!-- Caso 1: Parque Acosta 153 -->
-                <div class="case-card fade-on-scroll">
-                    <img src="Parque_Acosta.png" alt="Edificio Parque Acosta 153 en San Isidro">
-                    <div class="case-card-label-fixed">
-                        <h3>Parque Acosta 153</h3>
-                        <p>San Isidro · 14 departamentos</p>
+            <div class="case-feature fade-on-scroll">
+                <img src="Parque_Acosta.png" alt="Edificio Parque Acosta 153 en San Isidro">
+                <div class="case-feature-content">
+                    <p class="case-feature-label">Optimización de Proyecto</p>
+                    <p class="case-feature-title">Parque Acosta 153</p>
+                    <p class="case-feature-subtitle">Edificio Multifamiliar en San Isidro · 14 departamentos</p>
+                    <div class="case-feature-metric">+$1.38M</div>
+                    <p class="case-feature-metric-label">en ingresos adicionales</p>
+                    <p class="case-feature-desc">El CPU permitía 3 pisos, y uno más por estar frente a parque. Con semisótano, el punto de partida eran 5 niveles útiles y 10 departamentos. Leyendo la normativa a fondo sumamos 2 niveles aplicando el concepto de mayor altura de edificación por colindancia posterior: el edificio terminó con 7 niveles útiles y 14 departamentos.</p>
+                    <div class="case-feature-checks">
+                        <span><span class="check-icon">&#10003;</span> De 10 a 14 departamentos (+4 unidades)</span>
+                        <span><span class="check-icon">&#10003;</span> +540m² vendibles</span>
+                        <span><span class="check-icon">&#10003;</span> 39% más área</span>
                     </div>
-                    <div class="case-card-overlay">
-                        <p class="case-label">Optimización de Proyecto</p>
-                        <p class="case-title">Parque Acosta 153</p>
-                        <p class="case-subtitle">Edificio Multifamiliar en San Isidro · 14 departamentos</p>
-                        <div class="case-metric">+$1.38M</div>
-                        <p class="case-metric-label">en ingresos adicionales</p>
-                        <p class="case-desc">Los parámetros urbanísticos indicaban una altura máxima de 4 pisos por ubicarse frente a parque. Al analizar en profundidad la normativa, logramos obtener 2 pisos adicionales aplicando el concepto de "mayor altura de edificación por colindancia posterior".</p>
-                        <div class="case-checks">
-                            <span><span class="check-icon">&#10003;</span> De 10 a 14 departamentos (+4 unidades)</span>
-                            <span><span class="check-icon">&#10003;</span> +540m² vendibles</span>
-                            <span><span class="check-icon">&#10003;</span> 39% más área</span>
-                        </div>
+                    <p class="case-feature-role">Lo dirigimos desde la gerencia de proyecto y la residencia de obra, no como proyectista externo.</p>
+                    <p class="case-feature-fineprint">Cifras calculadas sobre el proyecto Parque Acosta 153, San Isidro. El resultado depende del terreno, la norma vigente y el mercado de la zona.</p>
+                    <div class="case-feature-cta">
+                        <a href="casos/Caso_Parque_Acosta_153.pdf" target="_blank" rel="noopener" class="btn btn-primary" onclick="trackCTA('caso_descarga','caso')">Ver el caso completo</a>
+                        <a href="https://wa.me/51997555885?text=Hola%2C%20vi%20el%20caso%20de%20Parque%20Acosta%20y%20quiero%20conversar%20sobre%20mi%20proyecto.%20(ref%3A%20caso)" target="_blank" rel="noopener" class="btn btn-secondary" onclick="trackCTA('caso_whatsapp','caso')">Conversar sobre tu proyecto</a>
                     </div>
                 </div>
+            </div>
+        </div>
+    </section>
 
-                <!-- Caso 2: Villa El Milagro -->
-                <div class="case-card fade-on-scroll">
-                    <img src="Villa_El_Milagro.png" alt="Edificio Villa El Milagro en Villa El Salvador">
-                    <div class="case-card-label-fixed">
-                        <h3>Villa El Milagro</h3>
-                        <p>Villa El Salvador · 50 departamentos</p>
-                    </div>
-                    <div class="case-card-overlay">
-                        <p class="case-label">Optimización de Proyecto</p>
-                        <p class="case-title">Villa El Milagro</p>
-                        <p class="case-subtitle">Edificio Multifamiliar VIS en Villa El Salvador · 50 departamentos</p>
-                        <div class="case-metric">+$700K</div>
-                        <p class="case-metric-label">en ingresos adicionales</p>
-                        <p class="case-desc">El diseño original tenía 40 departamentos, número máximo limitado por la cantidad de estacionamientos del proyecto original (13 estacionamientos). Optimizamos la zona de estacionamientos y el mix de producto final para alcanzar 50 departamentos.</p>
-                        <div class="case-checks">
-                            <span><span class="check-icon">&#10003;</span> De 40 a 50 departamentos (+10 unidades)</span>
-                            <span><span class="check-icon">&#10003;</span> +620m² vendibles</span>
-                            <span><span class="check-icon">&#10003;</span> 20% más área</span>
-                        </div>
-                    </div>
+    <!-- QUIÉN ESTÁ DETRÁS -->
+    <section class="section">
+        <div class="container">
+            <div class="persona-card fade-on-scroll">
+                <div class="persona-photo">
+                    <img src="miguel-huidobro.jpg" alt="Miguel Angel Huidobro Chicoma, arquitecto y socio fundador de HUIDOBRO Desarrolladora" width="928" height="1152" loading="lazy">
+                </div>
+                <div class="persona-content">
+                    <p class="persona-eyebrow">Quién está detrás</p>
+                    <h3 class="persona-name">Miguel Angel Huidobro Chicoma, arquitecto, PMP&reg;</h3>
+                    <p class="persona-role">Socio fundador de HUIDOBRO</p>
+                    <ul class="persona-credentials">
+                        <li><span class="check-icon">&#10003;</span> Seis años como Director de Proyectos en una inmobiliaria (2019-2025): del estudio de factibilidad al cierre, con equipos de hasta 15 profesionales. Del lado del que arriesga la plata, no del proveedor.</li>
+                        <li><span class="check-icon">&#10003;</span> Seis años respondiendo a la supervisión bancaria de los proyectos, sin que un desembolso se frenara en primera presentación.</li>
+                        <li><span class="check-icon">&#10003;</span> Redujimos hasta en un cuarto el tiempo de obtención de licencia integrando a los especialistas desde fase temprana.</li>
+                    </ul>
+                    <p class="persona-bio">Antes de fundar HUIDOBRO, optimizamos Parque Acosta 153 en San Isidro: el caso que ves arriba. HUIDOBRO nace de esa misma manera de trabajar los números de un proyecto antes de construirlo.</p>
                 </div>
             </div>
         </div>
@@ -795,6 +820,91 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
 
 
+    <!-- GUÍAS DESCARGABLES -->
+    <section id="guias" class="section section-gris">
+        <div class="container">
+            <div class="section-header">
+                <h2>Guías descargables</h2>
+                <div class="accent-line"></div>
+                <p>Si todavía no es momento de hablar, empieza por acá.</p>
+            </div>
+            <div class="grid grid-2 guias-grid">
+                <div class="guia-card fade-on-scroll" id="guia-cabida" data-guia="cabida">
+                    <span class="guia-num">01</span>
+                    <h3>Lo que una cabida bien hecha te dice</h3>
+                    <p>Qué revisar antes de comprometerte con un terreno, más allá de los metros que caben.</p>
+                    <button type="button" class="btn btn-secondary guia-abrir">Descargar</button>
+                    <form class="guia-form" data-guia="cabida" onsubmit="return enviarGuia(event)">
+                        <input type="text" name="nombre" placeholder="Nombre" required>
+                        <input type="email" name="email" placeholder="Correo" required>
+                        <select name="etapa">
+                            <option value="">¿En qué etapa está tu proyecto? (opcional)</option>
+                            <option value="evaluando-terreno">Evaluando un terreno</option>
+                            <option value="proyecto-en-curso">Proyecto en curso</option>
+                            <option value="con-anteproyecto">Ya tengo anteproyecto</option>
+                        </select>
+                        <button type="submit" class="btn btn-primary">Enviarme la guía</button>
+                        <p class="guia-form-status"></p>
+                    </form>
+                </div>
+                <div class="guia-card fade-on-scroll" id="guia-valuacion" data-guia="valuacion">
+                    <span class="guia-num">02</span>
+                    <h3>Cuánto vale realmente ese terreno</h3>
+                    <p>El método residual paso a paso: el precio máximo que puedes pagar sin comprometer el negocio.</p>
+                    <button type="button" class="btn btn-secondary guia-abrir">Descargar</button>
+                    <form class="guia-form" data-guia="valuacion" onsubmit="return enviarGuia(event)">
+                        <input type="text" name="nombre" placeholder="Nombre" required>
+                        <input type="email" name="email" placeholder="Correo" required>
+                        <select name="etapa">
+                            <option value="">¿En qué etapa está tu proyecto? (opcional)</option>
+                            <option value="evaluando-terreno">Evaluando un terreno</option>
+                            <option value="proyecto-en-curso">Proyecto en curso</option>
+                            <option value="con-anteproyecto">Ya tengo anteproyecto</option>
+                        </select>
+                        <button type="submit" class="btn btn-primary">Enviarme la guía</button>
+                        <p class="guia-form-status"></p>
+                    </form>
+                </div>
+                <div class="guia-card fade-on-scroll" id="guia-bim" data-guia="bim">
+                    <span class="guia-num">03</span>
+                    <h3>Quién se beneficia de verdad con BIM</h3>
+                    <p>Por qué el que pone la plata gana más con BIM que el que dibuja los planos.</p>
+                    <button type="button" class="btn btn-secondary guia-abrir">Descargar</button>
+                    <form class="guia-form" data-guia="bim" onsubmit="return enviarGuia(event)">
+                        <input type="text" name="nombre" placeholder="Nombre" required>
+                        <input type="email" name="email" placeholder="Correo" required>
+                        <select name="etapa">
+                            <option value="">¿En qué etapa está tu proyecto? (opcional)</option>
+                            <option value="evaluando-terreno">Evaluando un terreno</option>
+                            <option value="proyecto-en-curso">Proyecto en curso</option>
+                            <option value="con-anteproyecto">Ya tengo anteproyecto</option>
+                        </select>
+                        <button type="submit" class="btn btn-primary">Enviarme la guía</button>
+                        <p class="guia-form-status"></p>
+                    </form>
+                </div>
+                <div class="guia-card fade-on-scroll" id="guia-altura" data-guia="altura">
+                    <span class="guia-num">04</span>
+                    <h3>El parámetro dice pisos. La norma manda en metros.</h3>
+                    <p>Cómo convertir la altura máxima de tu certificado a metros lineales, y qué margen real te deja.</p>
+                    <button type="button" class="btn btn-secondary guia-abrir">Descargar</button>
+                    <form class="guia-form" data-guia="altura" onsubmit="return enviarGuia(event)">
+                        <input type="text" name="nombre" placeholder="Nombre" required>
+                        <input type="email" name="email" placeholder="Correo" required>
+                        <select name="etapa">
+                            <option value="">¿En qué etapa está tu proyecto? (opcional)</option>
+                            <option value="evaluando-terreno">Evaluando un terreno</option>
+                            <option value="proyecto-en-curso">Proyecto en curso</option>
+                            <option value="con-anteproyecto">Ya tengo anteproyecto</option>
+                        </select>
+                        <button type="submit" class="btn btn-primary">Enviarme la guía</button>
+                        <p class="guia-form-status"></p>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- FAQ -->
     <section id="faq" class="section">
         <div class="container">
@@ -803,10 +913,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                 <div class="accent-line"></div>
             </div>
             <div style="max-width: 760px; margin: 0 auto;">
-                <div class="faq-item fade-on-scroll"><div class="faq-question"><span>¿No es duplicar costos si ya tengo un proyectista?</span><span class="faq-toggle"><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="5,7 10,13 15,7"/></svg></span></div><div class="faq-answer"><p>No se duplica porque no trabajamos encima de otro estudio: nos encargamos del diseño completo. Huidobro desarrolla el anteproyecto optimizado y el expediente técnico BIM, cubriendo lo que normalmente harías con un estudio de arquitectura externo. La diferencia es que además integramos análisis de mercado con data real y maximización de áreas vendibles desde el inicio. No pagas doble — pagas una vez por un servicio más completo.</p></div></div>
+                <div class="faq-item active fade-on-scroll"><div class="faq-question"><span>¿No es duplicar costos si ya tengo un proyectista?</span><span class="faq-toggle"><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="5,7 10,13 15,7"/></svg></span></div><div class="faq-answer"><p>No se duplica porque no trabajamos encima de otro estudio: nos encargamos del diseño completo. Huidobro desarrolla el anteproyecto optimizado y el expediente técnico BIM, cubriendo lo que normalmente harías con un estudio de arquitectura externo. La diferencia es que además integramos análisis de mercado con data real y maximización de áreas vendibles desde el inicio. No pagas doble, pagas una vez por un servicio más completo.</p></div></div>
                 <div class="faq-item fade-on-scroll"><div class="faq-question"><span>¿Cómo mido el retorno de su servicio?</span><span class="faq-toggle"><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="5,7 10,13 15,7"/></svg></span></div><div class="faq-answer"><p>En los números que importan: el ratio de eficiencia de planta (m² vendibles / m² totales del proyecto) y el alineamiento del producto con la demanda real del mercado. Más área vendible en el mismo terreno es más ingreso bruto. Un producto definido con data es un producto que se vende más rápido. Ambos impactan directamente tu rentabilidad.</p></div></div>
                 <div class="faq-item fade-on-scroll"><div class="faq-question"><span>¿Qué incluye exactamente el paquete integral?</span><span class="faq-toggle"><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="5,7 10,13 15,7"/></svg></span></div><div class="faq-answer"><p>Tres servicios que trabajan juntos: análisis de mercado con data real para definir el producto correcto, optimización del anteproyecto para maximizar áreas vendibles, y desarrollo del expediente técnico con metodología BIM 100% compatibilizado entre todas las especialidades. Entregas un proyecto listo para construcción.</p></div></div>
-                <div class="faq-item fade-on-scroll"><div class="faq-question"><span>¿Puedo contratar solo el estudio de cabida?</span><span class="faq-toggle"><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="5,7 10,13 15,7"/></svg></span></div><div class="faq-answer"><p>Sí. Si estás evaluando un terreno y necesitas saber si el proyecto tiene sentido antes de avanzar, la cabida es exactamente el punto de partida. No es solo un ejercicio normativo: integramos datos de mercado y los números del negocio para que tengas claridad sobre el potencial real del terreno. Si después decides continuar con el paquete integral, seguimos desde ahí.</p></div></div>
                 <div class="faq-item fade-on-scroll"><div class="faq-question"><span>¿Qué pasa si ya tengo un anteproyecto avanzado?</span><span class="faq-toggle"><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="5,7 10,13 15,7"/></svg></span></div><div class="faq-answer"><p>Podemos entrar en cualquier momento del proceso. Si ya tienes un anteproyecto desarrollado por otro estudio, lo evaluamos y trabajamos sobre esa base para optimizar áreas vendibles, validar el producto contra datos de mercado y desarrollar el expediente técnico BIM compatibilizado.</p></div></div>
                 <div class="faq-item fade-on-scroll"><div class="faq-question"><span>¿Cuánto tiempo toma el proceso?</span><span class="faq-toggle"><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="5,7 10,13 15,7"/></svg></span></div><div class="faq-answer"><p>Un estudio de cabida se entrega en aproximadamente 1 semana. El paquete integral — desde el análisis de mercado hasta la entrega del expediente técnico BIM — toma entre 3 y 4 meses, dependiendo del tamaño y complejidad del proyecto. Cada etapa tiene hitos claros y fechas comprometidas.</p></div></div>
                 <div class="faq-item fade-on-scroll"><div class="faq-question"><span>¿Trabajan solo en Lima?</span><span class="faq-toggle"><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="5,7 10,13 15,7"/></svg></span></div><div class="faq-answer"><p>Actualmente nos enfocamos en Lima Metropolitana, donde conocemos profundamente la normativa, el mercado y los actores relevantes. Si tienes proyectos en otras ciudades del Perú, conversemos: podríamos explorar oportunidades caso a caso.</p></div></div>
@@ -819,8 +928,10 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <div class="container">
             <h2>Tu próximo proyecto puede ser más rentable</h2>
             <p>Agendemos una llamada para entender tu terreno, tus objetivos y el potencial de optimización. Sin rodeos, directamente sobre los números que importan.</p>
-            <!-- REPLACE: Reemplazar #calendly-link con tu enlace de Calendly o WhatsApp -->
-            <a href="https://cal.com/miguel-angel-huidobro/30min" target="_blank" rel="noopener" class="btn btn-primary">Conversemos Sobre Tu Proyecto</a>
+            <div class="hero-cta-group" style="justify-content:center;">
+                <a href="https://cal.com/miguel-angel-huidobro/30min" target="_blank" rel="noopener" class="btn btn-primary" onclick="trackCTA('cierre_agendar','cierre')">Conversemos Sobre Tu Proyecto</a>
+                <a href="https://wa.me/51997555885?text=Hola%2C%20quiero%20conversar%20sobre%20mi%20proyecto.%20(ref%3A%20cierre)" target="_blank" rel="noopener" class="btn btn-secondary-hero" onclick="trackCTA('cierre_whatsapp','cierre')">Escribir por WhatsApp</a>
+            </div>
             <div class="cta-final-trust">Llamada breve &middot; Confidencial &middot; Enfocada en tu próximo proyecto</div>
         </div>
     </section>
@@ -835,13 +946,14 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                 </div>
                 <div class="footer-section">
                     <h4>Contacto</h4>
-                    <a href="https://wa.me/51997555885" target="_blank" rel="noopener">+51 997 555 885 (WhatsApp)</a>
+                    <a href="https://wa.me/51997555885?text=Hola%2C%20quiero%20conversar%20sobre%20mi%20proyecto.%20(ref%3A%20footer)" target="_blank" rel="noopener" onclick="trackCTA('footer_whatsapp','footer')">+51 997 555 885 (WhatsApp)</a>
                     <p style="margin-top: var(--spacing-xs);">Lima, Perú</p>
                 </div>
                 <div class="footer-section">
                     <h4>Enlaces</h4>
                     <a href="#servicios">Servicios</a>
                     <a href="#proceso">Nuestro Proceso</a>
+                    <a href="#guias">Guías descargables</a>
                     <a href="#faq">Preguntas frecuentes</a>
                 </div>
             </div>
@@ -852,6 +964,108 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     </footer>
 
     <script>
+        // Medición: eventos de clic en CTA (GTM / dataLayer)
+        function trackCTA(label, section) {
+            if (window.dataLayer) window.dataLayer.push({ event: 'cta_click', cta: label, section: section });
+        }
+
+        // Guías descargables: envío a n8n (Landing — Descarga de guía)
+        // Workflow "Landing — Descarga de guía" en n8n: registra el lead en Notion y envía el PDF.
+        var N8N_GUIA_WEBHOOK = 'https://n8n-production-b312.up.railway.app/webhook/landing-guia';
+
+        var GUIA_PDF = {
+            cabida:    'guias/HUIDOBRO_LeadMagnet_01_Cabida.pdf',
+            valuacion: 'guias/HUIDOBRO_LeadMagnet_02_Valuacion.pdf',
+            bim:       'guias/HUIDOBRO_LeadMagnet_03_BIM.pdf',
+            altura:    'guias/HUIDOBRO_LeadMagnet_04_AlturaMetros.pdf'
+        };
+
+        // ?ref= identifica la pieza que trajo la visita (un reel, un post, un DM).
+        // Viaja con el formulario hasta Notion.
+        var REF_ORIGEN = (function () {
+            try {
+                var r = new URLSearchParams(window.location.search).get('ref');
+                return r ? r.slice(0, 60) : 'guias';
+            } catch (err) { return 'guias'; }
+        })();
+
+        function abrirGuia(card) {
+            document.querySelectorAll('.guia-card').forEach(function (c) {
+                c.classList.toggle('abierta', c === card);
+            });
+            var primero = card.querySelector('input[name="nombre"]');
+            if (primero) primero.focus({ preventScroll: true });
+        }
+
+        document.querySelectorAll('.guia-abrir').forEach(function (btn) {
+            btn.addEventListener('click', function () {
+                var card = btn.closest('.guia-card');
+                abrirGuia(card);
+                if (window.dataLayer) window.dataLayer.push({ event: 'guia_abrir', guia: card.dataset.guia });
+            });
+        });
+
+        // ?g=valuacion abre esa guía directamente, para enlaces desde redes o DM.
+        (function () {
+            var g;
+            try { g = new URLSearchParams(window.location.search).get('g'); } catch (err) { return; }
+            if (!g || !GUIA_PDF[g]) return;
+            var card = document.getElementById('guia-' + g);
+            if (!card) return;
+            abrirGuia(card);
+            window.addEventListener('load', function () {
+                card.scrollIntoView({ behavior: 'smooth', block: 'center' });
+            });
+        })();
+
+        function enviarGuia(e) {
+            e.preventDefault();
+            var form = e.target;
+            var guia = form.dataset.guia;
+            var status = form.querySelector('.guia-form-status');
+            var btn = form.querySelector('button[type="submit"]');
+            var pdf = GUIA_PDF[guia];
+
+            // Se abre acá, dentro del gesto del usuario: si se deja para el .then()
+            // del fetch, el bloqueador de ventanas emergentes lo cancela.
+            var abierta = pdf ? window.open(pdf, '_blank') : null;
+            var seAbrio = !!abierta;
+
+            var data = {
+                nombre: form.nombre.value,
+                email: form.email.value,
+                etapa: form.etapa.value,
+                guia: guia,
+                ref: REF_ORIGEN
+            };
+            btn.disabled = true;
+            status.textContent = 'Enviando...';
+            status.className = 'guia-form-status';
+            if (window.dataLayer) window.dataLayer.push({ event: 'guia_descarga', guia: guia });
+
+            fetch(N8N_GUIA_WEBHOOK, {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(data)
+            }).then(function(res) {
+                if (!res.ok) throw new Error('bad response');
+                status.innerHTML = seAbrio
+                    ? 'Listo. La guía se abrió en otra pestaña y también te la enviamos por correo.'
+                    : 'Listo, te la enviamos por correo. También puedes <a href="' + pdf + '" target="_blank" rel="noopener">abrirla acá</a>.';
+                status.className = 'guia-form-status ok';
+                form.reset();
+            }).catch(function() {
+                // El correo no salió, pero la guía igual queda en manos del visitante.
+                status.innerHTML = seAbrio
+                    ? 'La guía ya está abierta en otra pestaña. El correo no salió: si lo quieres, escríbenos por WhatsApp.'
+                    : 'No se pudo enviar el correo. <a href="' + pdf + '" target="_blank" rel="noopener">Abre la guía acá</a>.';
+                status.className = 'guia-form-status error';
+            }).finally(function() {
+                btn.disabled = false;
+            });
+            return false;
+        }
+
         // FAQ Accordion
         document.querySelectorAll('.faq-item').forEach(item => {
             item.querySelector('.faq-question').addEventListener('click', () => {
