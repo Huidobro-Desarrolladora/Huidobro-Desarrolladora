@@ -1,0 +1,245 @@
+<!doctype html>
+<html lang="es"><head><!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-WQ5S47V9');</script>
+<!-- End Google Tag Manager -->
+<meta name="robots" content="noindex, nofollow">
+<script defer src="/_vercel/insights/script.js"></script>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Proyecto B por tipología</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@600;700&family=Montserrat:wght@400;700&family=IBM+Plex+Mono:wght@500;600&display=swap">
+<style>
+/* Ficha: planta a la izquierda; a la derecha, un bloque por ambiente con la misma grilla de datos.
+   Cuadro: una fila por tipología, mismas columnas que los bloques de la ficha. */
+:root{
+  --bg:#f6f7f8; --paper:#ffffff; --ink:#161a1d; --ink-soft:#3d434a; --muted:#6b7178; --line:#e2e6ea;
+  --azul:#0F2D45; --azul-2:#4A7090; --azul-3:#e3eaf0;
+  --f-display:"Archivo","Helvetica Neue",Arial,sans-serif;
+  --f-body:"Helvetica Neue",-apple-system,BlinkMacSystemFont,Arial,sans-serif;
+  --f-data:"IBM Plex Mono",ui-monospace,Menlo,monospace;
+  color-scheme:light;  /* siempre en claro, también si el equipo del cliente está en modo oscuro (Miguel, 07-oct) */
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:15px/1.5 var(--f-body)}
+.envoltura{max-width:1240px;margin:0 auto;padding-inline:16px;padding-block:28px 56px}
+a{color:var(--azul)} a:focus-visible{outline:2px solid var(--azul-2);outline-offset:2px}
+.migas{font:12px var(--f-data);letter-spacing:.04em;color:var(--muted);text-transform:uppercase;margin:0 0 6px}
+h1{font:700 clamp(26px,4vw,38px)/1.1 var(--f-display);letter-spacing:-.01em;margin:0 0 6px;color:var(--azul);text-wrap:balance}
+h2{font:700 13px/1.2 var(--f-body);letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin:0 0 10px}
+h3{font:700 17px/1.25 var(--f-display);color:var(--azul);margin:0 0 8px}
+.bajada{color:var(--ink-soft);margin:0 0 10px}
+.chip{display:inline-block;font:600 11.5px/1 var(--f-data);padding:4px 6px;border-radius:3px;background:var(--azul-3);color:var(--azul);margin:0 4px 4px 0}
+.hoja{background:var(--paper);border:1px solid var(--line);border-radius:6px;padding:20px}
+.pila{display:grid;gap:16px;min-width:0}
+.ficha{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:18px;align-items:start;margin-top:18px}
+@media (max-width:860px){.ficha{grid-template-columns:minmax(0,1fr)}}
+.planta{display:flex;justify-content:center}
+.planta img{max-width:100%;height:auto;display:block;border-radius:4px}
+.grupo{display:grid;gap:14px}
+.ambiente{border-top:1px solid var(--line);padding-top:14px}
+.grupo .ambiente:first-of-type{border-top:0;padding-top:0}
+dl.datos{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px 14px;margin:0}
+@media (max-width:520px){dl.datos{grid-template-columns:repeat(2,minmax(0,1fr))}}
+dl.datos div{min-width:0}
+dl.datos dt{font:11px/1.3 var(--f-body);letter-spacing:.05em;text-transform:uppercase;color:var(--muted)}
+dl.datos dd{margin:2px 0 0;font:600 17px/1.25 var(--f-display);color:var(--ink);font-variant-numeric:tabular-nums}
+.letra-chica{font-size:12px;color:var(--muted);line-height:1.6}
+.letra-chica b{color:var(--ink-soft);font-weight:600}
+.tabla{overflow-x:auto;-webkit-overflow-scrolling:touch}
+table{border-collapse:collapse;width:100%;font-variant-numeric:tabular-nums}
+th,td{padding:7px 9px;border-bottom:1px solid var(--line);text-align:left;vertical-align:top}
+th{font:600 11px/1.3 var(--f-body);letter-spacing:.05em;text-transform:uppercase;color:var(--muted);white-space:nowrap}
+th.bloque{color:var(--azul);border-bottom:2px solid var(--azul-3);text-align:center}
+td.num,th.num{text-align:right}
+.cuadro td{white-space:nowrap;font-size:13.5px}
+.cuadro tr.grupo-fila td{background:var(--azul-3);color:var(--azul);font:700 13px var(--f-display)}
+.cod{font:600 12px var(--f-data);color:var(--azul)}
+.cuadro tr.fila td{padding:0}
+.cuadro a.celda{display:block;padding:9px 10px;color:inherit;text-decoration:none}
+.cuadro tr.fila:hover td{background:var(--azul-3)}
+.cuadro tr.fila:hover .ir,.cuadro a.celda:focus-visible .ir{opacity:1}
+.ir{font-size:12px;color:var(--azul);opacity:.55;margin-left:6px}
+.cuadro th{white-space:normal;vertical-align:bottom}
+.cuadro .sub{white-space:normal;max-width:16ch;margin-left:auto}
+.sub{display:block;color:var(--muted);font-size:12px}
+.dos{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,1fr);gap:16px;align-items:start}
+@media (max-width:860px){.dos{grid-template-columns:minmax(0,1fr)}}
+/* el mapa va siempre sobre blanco, como las plantas */
+.mapa{background:#fff;border-radius:4px;padding:8px}
+.mapa img{width:100%;height:auto;display:block}
+table.leyenda{font-size:13px}
+.sobre-cuadro{display:flex;justify-content:flex-end;margin:0 0 10px}
+.boton{font:600 13px var(--f-body);padding:7px 12px;border-radius:4px;border:1px solid var(--line);background:var(--paper);color:var(--azul);cursor:pointer}
+.boton:hover{background:var(--azul-3)}
+.boton:focus-visible{outline:2px solid var(--azul-2);outline-offset:2px}
+dialog#leyenda{width:min(760px,calc(100vw - 32px));max-height:calc(100vh - 48px);border:1px solid var(--line);border-radius:6px;
+  padding:20px;background:var(--paper);color:var(--ink);box-shadow:0 12px 40px rgba(15,45,69,.25)}
+dialog#leyenda::backdrop{background:rgba(15,25,35,.45)}
+.dialogo-cabeza{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:12px}
+.dialogo-cabeza h2{margin:0}
+.cuadro .cod[data-tip]{cursor:help;border-bottom:1px dotted currentColor}
+.tip{position:fixed;z-index:10;max-width:280px;padding:6px 9px;border-radius:4px;background:var(--azul);color:#fff;
+  font:500 12.5px/1.35 var(--f-body);pointer-events:none;box-shadow:0 4px 14px rgba(0,0,0,.18)}
+.pestanas{display:flex;flex-wrap:wrap;gap:6px;margin:18px 0 10px}
+.pestanas button{font:600 14px var(--f-body);padding:8px 14px;border-radius:4px;border:1px solid var(--line);
+  background:var(--paper);color:var(--ink-soft);cursor:pointer}
+.pestanas button[aria-selected=true]{background:var(--azul);border-color:var(--azul);color:var(--paper)}
+.pestanas button[aria-selected=true] .sub{color:var(--paper);opacity:.75}
+.pestanas button:focus-visible{outline:2px solid var(--azul-2);outline-offset:2px}
+table.radio{font-size:14px;table-layout:fixed}
+table.radio col.c-nombre{width:230px} table.radio col.c-ref{width:100px}
+table.radio thead th{white-space:normal;vertical-align:bottom}
+table.radio th[scope=row]{text-transform:none;letter-spacing:0;font:400 13.5px var(--f-body);color:var(--ink-soft);
+  position:sticky;left:0;background:var(--paper);min-width:120px}
+table.radio td{white-space:nowrap}
+table.radio td.txt{white-space:normal;text-align:right}
+table.radio .ref{color:var(--muted);background:var(--bg)}
+table.radio tr.grupo-fila td{background:var(--azul-3);color:var(--azul);font:700 13px var(--f-display);position:sticky;left:0}
+ul.proyectos{margin:0 0 8px;padding-left:18px}
+table.areas{font-size:14px}
+table.areas th[scope=row]{text-transform:none;letter-spacing:0;font:600 13.5px var(--f-body);color:var(--ink)}
+table.areas thead th{font-size:13px}
+table.areas td{white-space:nowrap}
+table.areas tr.ref th, table.areas tr.ref td{color:var(--muted);font-weight:400}
+table.areas tr.total th, table.areas tr.total td{border-top:2px solid var(--azul-3);border-bottom:0}
+table.leyenda th{white-space:normal;text-transform:none;letter-spacing:0;font:600 13px/1.3 var(--f-body);color:var(--ink-soft);
+  text-align:center;vertical-align:middle;width:42%;border-right:1px solid var(--line);background:var(--azul-3)}
+table.leyenda td{padding:4px 10px;vertical-align:middle}
+table.leyenda td.cod{text-align:center;width:11%;border-right:1px solid var(--line)}
+table.leyenda tr:has(+ tr th) td, table.leyenda tr:last-child td{border-bottom:1px solid var(--rule, var(--line))}
+.leyenda-codigos{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:4px 18px;font-size:12.5px;color:var(--ink-soft)}
+.mapa.ancho{padding:4px}
+.mapa.ancho svg{width:100%;height:auto;display:block}
+.mapa svg a{cursor:pointer}
+.mapa svg a:hover path,.mapa svg a:focus path{opacity:.75}
+.mapa svg a:hover text{text-decoration:underline}
+.mapa svg a:focus-visible{outline:2px solid var(--azul-2)}
+table.radio th.col .dev{display:block;font:400 11.5px var(--f-body);letter-spacing:0;text-transform:none;color:var(--muted);margin:1px 0 3px}
+dl.datos-proyecto{margin:6px 0 4px;display:grid;grid-template-columns:max-content 1fr;gap:3px 14px;font-size:14.5px}
+dl.datos-proyecto div{display:contents}
+dl.datos-proyecto dt{color:var(--muted)}
+dl.datos-proyecto dd{margin:0;color:var(--ink);font-weight:600}
+.cruzada{display:inline-block;margin-top:6px;padding:3px 8px;border-radius:12px;font:600 11.5px/1.2 var(--f-body);
+  letter-spacing:0;text-transform:none;white-space:nowrap}
+.cruzada.si{background:#1f7a4d;color:#fff}
+.cruzada.no{background:transparent;color:var(--ink-soft);border:1.5px solid var(--ink-soft)}
+.cruzada.grande{font-size:15px;padding:6px 14px;margin:2px 0 10px}
+.cruzada b{font-weight:800}
+table.mix td{font-size:14px}
+.tiene{color:var(--azul);font-weight:700}
+.no-tiene{color:var(--muted)}
+.area-venta{display:block;margin-top:6px;font:600 15px var(--f-display);color:var(--ink);text-transform:none;letter-spacing:0}
+.area-venta small{display:block;font:400 10.5px var(--f-body);letter-spacing:.05em;text-transform:uppercase;color:var(--muted)}
+.aviso{background:#fdecea;color:#8a1f12;border:1px solid #f3c2bb;border-radius:4px;padding:8px 12px;font-weight:600;margin:0 0 14px}
+th.prueba{color:var(--muted)}
+.barra{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:8px 16px;margin:18px 0 10px}
+.barra .pestanas{margin:0}
+.todo{display:flex;gap:6px}
+.todo button{font:600 12.5px var(--f-body);padding:6px 10px;border-radius:4px;border:1px solid var(--line);background:transparent;color:var(--azul);cursor:pointer}
+.todo button:hover{background:var(--azul-3)}
+table.radio tr.grupo-fila td{padding:0}
+button.plegar{all:unset;box-sizing:border-box;display:flex;align-items:center;gap:8px;width:100%;padding:9px 9px;cursor:pointer;
+  font:700 13.5px var(--f-display);color:var(--azul)}
+button.plegar:hover{background:color-mix(in srgb,var(--azul) 8%,transparent)}
+button.plegar:focus-visible{outline:2px solid var(--azul-2);outline-offset:-2px}
+.flecha{display:inline-block;transition:transform .15s;font-size:11px}
+button.plegar[aria-expanded=true] .flecha{transform:rotate(90deg)}
+.cuenta{font:400 12px var(--f-body);color:var(--muted)}
+tbody.plegado tr.dato{display:none}
+/* un color por proyecto: su columna y su punto en el mapa (Miguel, 07-oct) */
+:root{--p0:#0F2D45;--p1:#C2703D;--p2:#4E8A6E;--p3:#8A6BB0;--p4:#B8932E;--p5:#5B8DB8}
+.p0{--c:var(--p0)}.p1{--c:var(--p1)}.p2{--c:var(--p2)}.p3{--c:var(--p3)}.p4{--c:var(--p4)}.p5{--c:var(--p5)}
+table.radio th.col{border-top:4px solid var(--c);color:var(--c)}
+table.radio th.col a{color:var(--c)}
+table.radio th.col .sub{color:var(--c);opacity:.8}
+table.radio td.col{background:color-mix(in srgb,var(--c) 9%,transparent)}
+.etq{display:inline-block;font:600 12px/1 var(--f-body);padding:4px 7px;border-radius:10px;background:var(--azul-3);color:var(--azul);margin:2px 0 2px 4px;white-space:nowrap}
+.etq.vacia{background:transparent;border:1px dashed var(--line);color:var(--muted)}
+.conclusiones{margin-top:26px;background:var(--azul);color:#fff;border-radius:8px;padding:24px 22px 26px}
+.conclusiones h2{color:#fff;opacity:.85;margin-bottom:16px}
+.conclusiones .tarjetas{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:16px}
+.conclusion{background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.14);border-radius:6px;padding:16px 18px}
+/* un tono de arena a ámbar por número de dormitorios, que contrasta con el azul de la sección (Miguel, 07-oct);
+   sobre fondo claro, el texto va en azul y gris oscuro */
+.conclusion.d1{background:#fbeedb;border-color:#fbeedb}
+.conclusion.d2{background:#f6dcb4;border-color:#f6dcb4}
+.conclusion.d3{background:#efc68b;border-color:#efc68b}
+.conclusion.d1 h3,.conclusion.d2 h3,.conclusion.d3 h3{color:var(--azul)}
+.conclusion[class*=" d"] .dato{color:var(--azul)}
+.conclusion[class*=" d"] .texto{color:#3a3f45}
+.conclusion[class*=" d"] li::before{background:var(--azul);color:#fff}
+.conclusion h3{color:#fff;font:700 18px var(--f-display);margin:0 0 12px}
+.conclusion ol{list-style:none;margin:0;padding:0;display:grid;gap:14px}
+.conclusion li{display:grid;gap:3px}
+.conclusion .dato{font:700 18px/1.25 "Montserrat",var(--f-display);color:#b9d75f}
+.conclusiones .bajada-c{color:rgba(255,255,255,.8);margin:-8px 0 16px;font-size:14.5px}
+.conclusion ol{counter-reset:c}
+.conclusion li{counter-increment:c;position:relative;padding-left:30px}
+.conclusion li::before{content:counter(c);position:absolute;left:0;top:1px;width:21px;height:21px;border-radius:50%;
+  background:#b9d75f;color:var(--azul);font:700 12px/21px var(--f-body);text-align:center}
+.conclusion .texto{font-size:14px;line-height:1.5;color:rgba(255,255,255,.88)}
+details.glosario{margin-top:18px;padding:0}
+details.glosario summary{list-style:none;cursor:pointer;display:flex;align-items:center;gap:8px;padding:14px 20px;
+  font:700 15px var(--f-display);color:var(--azul)}
+details.glosario summary::-webkit-details-marker{display:none}
+details.glosario summary:focus-visible{outline:2px solid var(--azul-2);outline-offset:-2px}
+details.glosario[open] summary .flecha{transform:rotate(90deg)}
+.glos{display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:18px 28px;padding:4px 20px 20px;border-top:1px solid var(--line)}
+.glos-grupo h3{font-size:14px;margin:14px 0 6px}
+.glos dl{margin:0}
+.glos dt{font-weight:600;font-size:13.5px;color:var(--ink);margin-top:8px}
+.glos dd{margin:2px 0 0;font-size:13.5px;color:var(--ink-soft);line-height:1.5}
+@media (prefers-reduced-motion:reduce){.flecha{transition:none}}
+footer{margin-top:26px;font-size:12px;color:var(--muted)}
+</style>
+</head><body><noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WQ5S47V9" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<main class="envoltura">
+<p class="migas"><a href="../index.html">← Comparativo</a></p>
+<h1>Proyecto B: programa por tipología</h1>
+<dl class="datos-proyecto">
+<div><dt>Pisos</dt><dd>11</dd></div>
+<div><dt>Departamentos</dt><dd>41</dd></div>
+<div><dt>Dormitorios</dt><dd>1, 2 y 3 · flats y dúplex</dd></div>
+<div><dt>Áreas</dt><dd>37.67 a 129.09 m²</dd></div>
+</dl>
+<div class="pila" style="margin-top:18px">
+<section class="hoja">
+<div class="sobre-cuadro"><button type="button" class="boton" id="abrir-leyenda" aria-haspopup="dialog">Leyenda de códigos</button></div>
+<div class="tabla"><table class="cuadro"><thead><tr><th>Tipología</th><th class=num>Área de venta m²</th><th>Ventilación cruzada</th><th>Cocina</th><th>Sala de estar</th><th>Baño de visita</th><th>Baño compartido</th><th>Baño del principal</th><th>Dorm. de servicio</th><th>Lavandería</th><th>Exterior</th></tr></thead><tbody><tr class="grupo-fila"><td colspan="11">1 dormitorio</td></tr><tr class="fila"><td><a class="celda" href="ficha-B-1D.html"><b>B-1D</b> <span class="ir">ver ficha →</span></a></td><td class="num"><a class="celda" href="ficha-B-1D.html" tabindex="-1">40.72<span class="sub">techada y total</span></a></td><td class=""><a class="celda" href="ficha-B-1D.html" tabindex="-1"><span class="cruzada no">Ventilación cruzada: <b>no</b></span></a></td><td class=""><a class="celda" href="ficha-B-1D.html" tabindex="-1"><span class="cod" data-tip="Cocina abierta">CA</span></a></td><td class=""><a class="celda" href="ficha-B-1D.html" tabindex="-1"><span class="cod" data-tip="Sin sala de estar">SSE</span></a></td><td class=""><a class="celda" href="ficha-B-1D.html" tabindex="-1"><span class="cod" data-tip="Sin baño de visita">SBV</span></a></td><td class=""><a class="celda" href="ficha-B-1D.html" tabindex="-1"><span class="cod" data-tip="Con baño compartido">BC</span></a></td><td class=""><a class="celda" href="ficha-B-1D.html" tabindex="-1"><span class="cod" data-tip="Sin baño independiente">SBI</span></a></td><td class=""><a class="celda" href="ficha-B-1D.html" tabindex="-1"><span class="cod" data-tip="Sin dormitorio de servicio">SDS</span></a></td><td class=""><a class="celda" href="ficha-B-1D.html" tabindex="-1"><span class="cod" data-tip="Lavandería integrada a la cocina + Lavandería en nicho">LI+LN</span></a></td><td class=""><a class="celda" href="ficha-B-1D.html" tabindex="-1"><span class="cod" data-tip="Sin terraza ni balcón">SEX</span></a></td></tr><tr class="grupo-fila"><td colspan="11">2 dormitorios</td></tr><tr class="fila"><td><a class="celda" href="ficha-B-2D-1.html"><b>B-2D-1</b> <span class="ir">ver ficha →</span></a></td><td class="num"><a class="celda" href="ficha-B-2D-1.html" tabindex="-1">56.81<span class="sub">techada y total</span></a></td><td class=""><a class="celda" href="ficha-B-2D-1.html" tabindex="-1"><span class="cruzada si">Ventilación cruzada: <b>sí</b></span></a></td><td class=""><a class="celda" href="ficha-B-2D-1.html" tabindex="-1"><span class="cod" data-tip="Cocina abierta">CA</span></a></td><td class=""><a class="celda" href="ficha-B-2D-1.html" tabindex="-1"><span class="cod" data-tip="Sin sala de estar">SSE</span></a></td><td class=""><a class="celda" href="ficha-B-2D-1.html" tabindex="-1"><span class="cod" data-tip="Sin baño de visita">SBV</span></a></td><td class=""><a class="celda" href="ficha-B-2D-1.html" tabindex="-1"><span class="cod" data-tip="Con baño compartido">BC</span></a></td><td class=""><a class="celda" href="ficha-B-2D-1.html" tabindex="-1"><span class="cod" data-tip="Con baño independiente">BI</span></a></td><td class=""><a class="celda" href="ficha-B-2D-1.html" tabindex="-1"><span class="cod" data-tip="Sin dormitorio de servicio">SDS</span></a></td><td class=""><a class="celda" href="ficha-B-2D-1.html" tabindex="-1"><span class="cod" data-tip="Lavandería cerrada">LC</span></a></td><td class=""><a class="celda" href="ficha-B-2D-1.html" tabindex="-1"><span class="cod" data-tip="Con balcón">BA</span></a></td></tr><tr class="fila"><td><a class="celda" href="ficha-B-2D-2.html"><b>B-2D-2</b> <span class="ir">ver ficha →</span></a></td><td class="num"><a class="celda" href="ficha-B-2D-2.html" tabindex="-1">54.32<span class="sub">total con balcón; techada 53.44 m²</span></a></td><td class=""><a class="celda" href="ficha-B-2D-2.html" tabindex="-1"><span class="cruzada no">Ventilación cruzada: <b>no</b></span></a></td><td class=""><a class="celda" href="ficha-B-2D-2.html" tabindex="-1"><span class="cod" data-tip="Cocina abierta">CA</span></a></td><td class=""><a class="celda" href="ficha-B-2D-2.html" tabindex="-1"><span class="cod" data-tip="Sin sala de estar">SSE</span></a></td><td class=""><a class="celda" href="ficha-B-2D-2.html" tabindex="-1"><span class="cod" data-tip="Sin baño de visita">SBV</span></a></td><td class=""><a class="celda" href="ficha-B-2D-2.html" tabindex="-1"><span class="cod" data-tip="Con baño compartido">BC</span></a></td><td class=""><a class="celda" href="ficha-B-2D-2.html" tabindex="-1"><span class="cod" data-tip="Con baño independiente">BI</span></a></td><td class=""><a class="celda" href="ficha-B-2D-2.html" tabindex="-1"><span class="cod" data-tip="Sin dormitorio de servicio">SDS</span></a></td><td class=""><a class="celda" href="ficha-B-2D-2.html" tabindex="-1"><span class="cod" data-tip="Lavandería en nicho">LN</span></a></td><td class=""><a class="celda" href="ficha-B-2D-2.html" tabindex="-1"><span class="cod" data-tip="Con balcón">BA</span></a></td></tr><tr class="grupo-fila"><td colspan="11">3 dormitorios</td></tr><tr class="fila"><td><a class="celda" href="ficha-B-3D.html"><b>B-3D</b> <span class="ir">ver ficha →</span></a></td><td class="num"><a class="celda" href="ficha-B-3D.html" tabindex="-1">73.67<span class="sub">total con balcón</span></a></td><td class=""><a class="celda" href="ficha-B-3D.html" tabindex="-1"><span class="cruzada si">Ventilación cruzada: <b>sí</b></span></a></td><td class=""><a class="celda" href="ficha-B-3D.html" tabindex="-1"><span class="cod" data-tip="Cocina abierta">CA</span></a></td><td class=""><a class="celda" href="ficha-B-3D.html" tabindex="-1"><span class="cod" data-tip="Sin sala de estar">SSE</span></a></td><td class=""><a class="celda" href="ficha-B-3D.html" tabindex="-1"><span class="cod" data-tip="Sin baño de visita">SBV</span></a></td><td class=""><a class="celda" href="ficha-B-3D.html" tabindex="-1"><span class="cod" data-tip="Con baño compartido">BC</span></a></td><td class=""><a class="celda" href="ficha-B-3D.html" tabindex="-1"><span class="cod" data-tip="Con baño independiente">BI</span></a></td><td class=""><a class="celda" href="ficha-B-3D.html" tabindex="-1"><span class="cod" data-tip="Sin dormitorio de servicio">SDS</span></a></td><td class=""><a class="celda" href="ficha-B-3D.html" tabindex="-1"><span class="cod" data-tip="Lavandería cerrada">LC</span></a></td><td class=""><a class="celda" href="ficha-B-3D.html" tabindex="-1"><span class="cod" data-tip="Con balcón">BA</span></a></td></tr></tbody></table></div></section>
+</div>
+<dialog id="leyenda" aria-labelledby="titulo-leyenda">
+<div class="dialogo-cabeza"><h2 id="titulo-leyenda">Códigos de programa</h2><button type="button" class="boton" id="cerrar-leyenda">Cerrar</button></div>
+<div class="tabla"><table class="leyenda"><tbody><tr><th scope=row rowspan=2>Cocina</th><td class="cod">CA</td><td>Cocina abierta</td></tr><tr><td class="cod">CC</td><td>Cocina cerrada</td></tr><tr><th scope=row rowspan=2>Baño de visita</th><td class="cod">BV</td><td>Con baño de visita</td></tr><tr><td class="cod">SBV</td><td>Sin baño de visita</td></tr><tr><th scope=row rowspan=2>Baño compartido</th><td class="cod">BC</td><td>Con baño compartido</td></tr><tr><td class="cod">SBC</td><td>Sin baño compartido</td></tr><tr><th scope=row rowspan=2>Baño independiente del dormitorio principal</th><td class="cod">BI</td><td>Con baño independiente</td></tr><tr><td class="cod">SBI</td><td>Sin baño independiente</td></tr><tr><th scope=row rowspan=2>Sala de estar</th><td class="cod">SE</td><td>Con sala de estar</td></tr><tr><td class="cod">SSE</td><td>Sin sala de estar</td></tr><tr><th scope=row rowspan=5>Lavandería</th><td class="cod">LC</td><td>Lavandería cerrada</td></tr><tr><td class="cod">LI</td><td>Lavandería integrada a la cocina</td></tr><tr><td class="cod">LN</td><td>Lavandería en nicho</td></tr><tr><td class="cod">LT</td><td>Lavandería en la terraza</td></tr><tr><td class="cod">SLV</td><td>Sin lavandería</td></tr><tr><th scope=row rowspan=2>Dormitorio de servicio</th><td class="cod">DS</td><td>Con dormitorio de servicio</td></tr><tr><td class="cod">SDS</td><td>Sin dormitorio de servicio</td></tr><tr><th scope=row rowspan=3>Exterior</th><td class="cod">TE</td><td>Con terraza</td></tr><tr><td class="cod">BA</td><td>Con balcón</td></tr><tr><td class="cod">SEX</td><td>Sin terraza ni balcón</td></tr></tbody></table></div>
+<p class="letra-chica" style="margin-top:12px">Baño compartido: se entra desde el hall o el pasillo. Baño del principal: se entra solo por ese dormitorio.
+Terraza: fondo de 1.20 m o más; con menos, balcón.</p>
+</dialog>
+<div class="tip" id="tip" role="tooltip" hidden></div>
+<section class="hoja"><h2>Áreas por tipología</h2>
+<div class="tabla"><table class="areas"><thead><tr><th>m²</th><th class="num"><a href="ficha-B-1D.html">B-1D</a></th><th class="num"><a href="ficha-B-2D-1.html">B-2D-1</a></th><th class="num"><a href="ficha-B-2D-2.html">B-2D-2</a></th><th class="num"><a href="ficha-B-3D.html">B-3D</a></th></tr></thead><tbody>
+<tr class="ref"><th scope="row">Área de venta</th><td class="num">40.72</td><td class="num">56.81</td><td class="num">54.32</td><td class="num">73.67</td></tr>
+<tr><th scope="row">Dormitorio principal</th><td class="num">9.85</td><td class="num">9.10</td><td class="num">9.70</td><td class="num">10.87</td></tr><tr><th scope="row">Dormitorio 2</th><td class="num">—</td><td class="num">5.78</td><td class="num">7.43</td><td class="num">7.09</td></tr><tr><th scope="row">Dormitorio 3</th><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">7.01</td></tr><tr><th scope="row">Sala-comedor</th><td class="num">13.79</td><td class="num">11.90</td><td class="num">12.81</td><td class="num">15.09</td></tr><tr><th scope="row">Cocina</th><td class="num">5.94</td><td class="num">4.05</td><td class="num">4.20</td><td class="num">5.25</td></tr><tr><th scope="row">Baño compartido</th><td class="num">3.22</td><td class="num">2.41</td><td class="num">2.64</td><td class="num">2.58</td></tr><tr><th scope="row">Baño del principal</th><td class="num">—</td><td class="num">2.43</td><td class="num">3.11</td><td class="num">2.56</td></tr><tr><th scope="row">Lavandería</th><td class="num">1.42</td><td class="num">2.09</td><td class="num">1.40</td><td class="num">2.27</td></tr><tr><th scope="row">Hall y pasillos</th><td class="num">2.17</td><td class="num">8.18</td><td class="num">4.04</td><td class="num">7.95</td></tr><tr><th scope="row">Balcón o terraza</th><td class="num">—</td><td class="num">2.27</td><td class="num">2.08</td><td class="num">3.81</td></tr></tbody></table></div></section>
+<footer>HUIDOBRO Desarrolladora · plantas: material de venta del proyecto · octubre de 2026.</footer>
+</main>
+<script>
+(function(){
+  // leyenda en ventana emergente (Miguel, 07-oct); se cierra con el botón, con Esc o al hacer clic fuera
+  var d=document.getElementById('leyenda');
+  document.getElementById('abrir-leyenda').addEventListener('click',function(){d.showModal();});
+  document.getElementById('cerrar-leyenda').addEventListener('click',function(){d.close();});
+  d.addEventListener('click',function(ev){if(ev.target===d)d.close();});
+  // nombre completo del código al pasar el mouse
+  var tip=document.getElementById('tip');
+  [].forEach.call(document.querySelectorAll('.cod[data-tip]'),function(c){
+    c.addEventListener('mouseenter',function(){
+      tip.textContent=c.dataset.tip;tip.hidden=false;
+      var r=c.getBoundingClientRect(),w=tip.offsetWidth;
+      tip.style.left=Math.max(8,Math.min(window.innerWidth-w-8,r.left+r.width/2-w/2))+'px';
+      tip.style.top=(r.top-tip.offsetHeight-8)+'px';});
+    c.addEventListener('mouseleave',function(){tip.hidden=true;});
+  });
+  window.addEventListener('scroll',function(){tip.hidden=true;},true);
+})();
+</script></body></html>
