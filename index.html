@@ -937,6 +937,24 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                         <p class="guia-form-status"></p>
                     </form>
                 </div>
+                <div class="guia-card fade-on-scroll" id="guia-pisos" data-guia="pisos">
+                    <span class="guia-num">06</span>
+                    <h3>Construir más pisos no significa ganar más dinero</h3>
+                    <p>Un mismo terreno con dos regímenes: por qué la cabida que más metros saca no siempre es la que más gana.</p>
+                    <button type="button" class="btn btn-secondary guia-abrir">Descargar</button>
+                    <form class="guia-form" data-guia="pisos" onsubmit="return enviarGuia(event)">
+                        <input type="text" name="nombre" placeholder="Nombre" required>
+                        <input type="email" name="email" placeholder="Correo" required>
+                        <select name="etapa">
+                            <option value="">¿En qué etapa está tu proyecto? (opcional)</option>
+                            <option value="evaluando-terreno">Evaluando un terreno</option>
+                            <option value="proyecto-en-curso">Proyecto en curso</option>
+                            <option value="con-anteproyecto">Ya tengo anteproyecto</option>
+                        </select>
+                        <button type="submit" class="btn btn-primary">Enviarme la guía</button>
+                        <p class="guia-form-status"></p>
+                    </form>
+                </div>
             </div>
         </div>
     </section>
@@ -1014,7 +1032,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             valuacion: 'guias/HUIDOBRO_LeadMagnet_02_Valuacion.pdf',
             bim:       'guias/HUIDOBRO_LeadMagnet_03_BIM.pdf',
             altura:    'guias/HUIDOBRO_LeadMagnet_04_AlturaMetros.pdf',
-            producto:  'guias/HUIDOBRO_LeadMagnet_05_Producto.pdf'
+            producto:  'guias/HUIDOBRO_LeadMagnet_05_Producto.pdf',
+            pisos:     'guias/HUIDOBRO_LeadMagnet_06_MasPisos.pdf'
         };
 
         // ?ref= identifica la pieza que trajo la visita (un reel, un post, un DM).
