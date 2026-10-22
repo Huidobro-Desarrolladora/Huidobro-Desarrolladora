@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-WQ5S47V9');</script>
+<!-- End Google Tag Manager -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Página de entrega del video del reel ENTORNO: no se indexa, se llega por enlace directo -->
+    <meta name="robots" content="noindex, nofollow">
+    <title>Diseño con costo objetivo | HUIDOBRO Desarrolladora</title>
+    <meta name="description" content="Video de 7 minutos: qué es el diseño con costo objetivo y cómo sacar metrado y presupuesto del modelo mientras diseñas.">
+    <meta name="theme-color" content="#0D1221">
+    <!-- Sin og:url a propósito: LinkedIn lo usa como destino y descarta el ?ref= (ver memoria de la landing) -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Diseño con costo objetivo: el video">
+    <meta property="og:description" content="Por qué el presupuesto llega tarde y cómo sacar metrado y presupuesto del modelo mientras diseñas.">
+    <meta property="og:image" content="https://www.huidobrodesarrolladora.com/video-entorno/og.jpg">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:image" content="https://www.huidobrodesarrolladora.com/video-entorno/og.jpg">
+    <script defer src="/_vercel/insights/script.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --azul-noche: #0D1221;
+            --azul-marina: #0F2D45;
+            --arena-calida: #E5E2CF;
+            --oliva-suave: #6B7A63;
+            --gris-humo: #F3F3F2;
+            --texto-2: #5A6577;
+            --borde: rgba(13,18,33,0.10);
+            --font: "Plus Jakarta Sans", "Helvetica Neue", sans-serif;
+            color-scheme: light;
+        }
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body { font-family: var(--font); color: var(--azul-noche); background: var(--gris-humo); -webkit-font-smoothing: antialiased; }
+        a { color: var(--azul-marina); }
+        .envoltura { max-width: 980px; margin: 0 auto; padding: 28px 16px 64px; }
+        .marca { display: inline-flex; align-items: center; gap: 10px; text-decoration: none; color: var(--azul-noche);
+                 font-weight: 700; letter-spacing: 0.14em; font-size: 14px; margin-bottom: 36px; }
+        .marca svg { width: 22px; height: 26px; }
+        .epi { font-size: 14px; font-weight: 600; color: var(--oliva-suave); margin-bottom: 10px; }
+        h1 { font-size: clamp(30px, 5vw, 48px); font-weight: 800; line-height: 1.05; letter-spacing: -0.02em; color: var(--azul-marina); margin-bottom: 14px; text-wrap: balance; }
+        .bajada { font-size: 17px; line-height: 1.6; color: var(--texto-2); max-width: 720px; margin-bottom: 28px; }
+        .reproductor { position: relative; width: 100%; aspect-ratio: 16 / 9; border-radius: 18px; overflow: hidden;
+                       background: var(--azul-noche); box-shadow: 0 16px 48px rgba(13,18,33,0.14); }
+        .reproductor img.fondo { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover;
+                                 filter: blur(10px) brightness(0.55); transform: scale(1.06); }
+        .reproductor iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
+        .puerta { position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; padding: 16px; }
+        .tarjeta { width: 100%; max-width: 420px; background: #fff; border-radius: 14px; padding: 22px; box-shadow: 0 16px 48px rgba(0,0,0,0.3); }
+        .tarjeta h2 { font-size: 20px; font-weight: 800; color: var(--azul-marina); margin-bottom: 6px; line-height: 1.2; }
+        .tarjeta p.nota { font-size: 14px; color: var(--texto-2); margin-bottom: 14px; line-height: 1.5; }
+        .tarjeta input, .tarjeta select { width: 100%; font: 500 15px var(--font); padding: 11px 12px; border: 1px solid var(--borde);
+                                           border-radius: 8px; margin-bottom: 10px; background: #fff; color: var(--azul-noche); }
+        .boton { display: inline-block; width: 100%; font: 700 15px var(--font); padding: 13px 18px; border: 0; border-radius: 8px;
+                 background: var(--azul-marina); color: #fff; cursor: pointer; text-align: center; text-decoration: none; }
+        .boton:disabled { opacity: 0.6; cursor: default; }
+        .estado { font-size: 13px; margin-top: 10px; color: var(--texto-2); min-height: 18px; }
+        .estado.error { color: #9b2c2c; }
+        .debajo { display: grid; grid-template-columns: minmax(0, 1.3fr) minmax(0, 1fr); gap: 28px; margin-top: 36px; }
+        @media (max-width: 760px) { .debajo { grid-template-columns: minmax(0, 1fr); } }
+        .debajo h3 { font-size: 13px; font-weight: 700; color: var(--oliva-suave); margin-bottom: 12px; }
+        ol.capitulos { list-style: none; display: grid; gap: 8px; }
+        ol.capitulos li { display: grid; grid-template-columns: 52px 1fr; font-size: 15px; line-height: 1.45; }
+        ol.capitulos b { font-variant-numeric: tabular-nums; color: var(--azul-marina); }
+        .cta { background: var(--azul-noche); color: var(--arena-calida); border-radius: 14px; padding: 22px; }
+        .cta h3 { color: var(--arena-calida); opacity: 0.8; }
+        .cta p { font-size: 18px; font-weight: 700; line-height: 1.35; color: #fff; margin-bottom: 16px; }
+        .cta .boton { background: var(--arena-calida); color: var(--azul-noche); }
+        .pie { margin-top: 48px; font-size: 13px; color: var(--texto-2); }
+        /* En el celular el formulario no cabe en un cuadro 16:9: mientras está cerrado, el cuadro crece */
+        @media (max-width: 640px) {
+            .reproductor.cerrado { aspect-ratio: auto; min-height: 440px; }
+            .bajada { font-size: 16px; }
+        }
+    </style>
+</head>
+<body>
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WQ5S47V9" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+<main class="envoltura">
+    <a class="marca" href="/" aria-label="HUIDOBRO Desarrolladora">
+        <svg viewBox="-20 -20 441 508" aria-hidden="true"><g fill="currentColor"><path d="M 0,0 L 133,0 L 133,103 L 0,176 Z"/><path d="M 134,103 L 400,251 L 400,468 L 268,468 L 268,321 L 135,252 Z"/><path d="M 133,251 L 0,321 L 0,468 L 133,468 Z"/><path d="M 268,0 L 401,0 L 401,104 A 109 109 0 0 1 268,0 Z"/></g></svg>
+        HUIDOBRO
+    </a>
+
+    <p class="epi">video · 7 minutos</p>
+    <h1>Diseña con el costo sobre la mesa</h1>
+    <p class="bajada">Qué es el diseño con costo objetivo (Target Value Design), por qué el presupuesto suele llegar cuando ya todo está decidido, y cómo sacamos el metrado y el presupuesto directo del modelo mientras diseñamos.</p>
+
+    <div class="reproductor cerrado" id="reproductor">
+        <img class="fondo" src="portada.jpg" alt="">
+        <div class="puerta" id="puerta">
+            <form class="tarjeta" id="form-video" onsubmit="return enviarVideo(event)">
+                <h2>Mira el video ahora</h2>
+                <p class="nota">Déjanos tus datos y el video se abre aquí mismo. También te enviamos el enlace por correo.</p>
+                <input type="text" name="nombre" placeholder="Nombre" required autocomplete="name">
+                <input type="email" name="email" placeholder="Correo" required autocomplete="email">
+                <select name="etapa">
+                    <option value="">Etapa de tu proyecto (opcional)</option>
+                    <option value="evaluando-terreno">Evaluando un terreno</option>
+                    <option value="proyecto-en-curso">Proyecto en curso</option>
+                    <option value="con-anteproyecto">Ya tengo anteproyecto</option>
+                </select>
+                <button type="submit" class="boton">Ver el video</button>
+                <p class="estado" id="estado"></p>
+            </form>
+        </div>
+    </div>
+
+    <section class="debajo">
+        <div>
+            <h3>lo que vas a ver</h3>
+            <ol class="capitulos">
+                <li><b>0:00</b>Por qué el presupuesto llega tarde</li>
+                <li><b>0:14</b>La curva que lo explica</li>
+                <li><b>0:38</b>Qué es Target Value Design</li>
+                <li><b>0:50</b>Las tres cifras: costo permitido, esperado y objetivo</li>
+                <li><b>1:27</b>Lo que hace falta para que funcione</li>
+                <li><b>2:16</b>Demo: metrado y presupuesto automáticos desde el modelo</li>
+                <li><b>6:31</b>Lo que la plataforma hace y lo que no</li>
+            </ol>
+        </div>
+        <aside class="cta">
+            <h3>después del video</h3>
+            <p>¿Quieres desarrollar tu proyecto con el costo definido desde el diseño?</p>
+            <a class="boton" href="https://wa.me/51997555885?text=Hola%2C%20vi%20el%20video%20de%20dise%C3%B1o%20con%20costo%20objetivo%20y%20quiero%20conversar%20sobre%20mi%20proyecto.%20(ref%3A%20video-entorno)" target="_blank" rel="noopener" onclick="trackCTA('video_whatsapp','video-entorno')">Escribir por WhatsApp</a>
+        </aside>
+    </section>
+
+    <p class="pie">&copy; 2026 HUIDOBRO Desarrolladora · <a href="/">huidobrodesarrolladora.com</a></p>
+</main>
+
+<script>
+    // Video no listado en YouTube. Se completa cuando Miguel lo sube.
+    var VIDEO_ID = 'qyPZK0kXEbg';
+    // Mismo flujo de n8n que las guías ("Landing — Descarga de guía"): registra el lead en Notion y manda el correo.
+    var N8N_GUIA_WEBHOOK = 'https://n8n-production-b312.up.railway.app/webhook/landing-guia';
+    var CLAVE = 'entorno';
+    var REF_ORIGEN = (function () {
+        try {
+            var r = new URLSearchParams(window.location.search).get('ref');
+            return r ? r.slice(0, 60) : 'video-entorno';
+        } catch (err) { return 'video-entorno'; }
+    })();
+
+    function trackCTA(label, section) {
+        if (window.dataLayer) window.dataLayer.push({ event: 'cta_click', cta: label, section: section });
+    }
+
+    function mostrarVideo() {
+        var rep = document.getElementById('reproductor');
+        if (!VIDEO_ID) {
+            document.getElementById('estado').textContent = 'El video se publica en unos minutos. Te llegará el enlace por correo.';
+            return false;
+        }
+        rep.classList.remove('cerrado');
+        rep.innerHTML = '<iframe src="https://www.youtube-nocookie.com/embed/' + VIDEO_ID +
+            '?autoplay=1&rel=0&modestbranding=1&cc_load_policy=0" title="Diseño con costo objetivo" ' +
+            'allow="autoplay; encrypted-media; picture-in-picture; fullscreen" allowfullscreen></iframe>';
+        return true;
+    }
+
+    // Quien ya dejó sus datos en este navegador ve el video directo.
+    try { if (localStorage.getItem('hd-video-' + CLAVE) === '1' && VIDEO_ID) mostrarVideo(); } catch (err) {}
+
+    function enviarVideo(e) {
+        e.preventDefault();
+        var form = e.target;
+        var estado = document.getElementById('estado');
+        var btn = form.querySelector('button[type="submit"]');
+        var data = { nombre: form.nombre.value, email: form.email.value, etapa: form.etapa.value, guia: CLAVE, ref: REF_ORIGEN };
+        btn.disabled = true;
+        estado.textContent = 'Enviando...';
+        estado.className = 'estado';
+        if (window.dataLayer) window.dataLayer.push({ event: 'guia_descarga', guia: CLAVE });
+
+        // El video se muestra de inmediato: el correo y Notion no lo bloquean.
+        fetch(N8N_GUIA_WEBHOOK, {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(data)
+        }).catch(function () {});
+        try { localStorage.setItem('hd-video-' + CLAVE, '1'); } catch (err) {}
+        if (!mostrarVideo()) btn.disabled = false;
+        return false;
+    }
+</script>
+</body>
+</html>
