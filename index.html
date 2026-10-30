@@ -955,6 +955,24 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                         <p class="guia-form-status"></p>
                     </form>
                 </div>
+                <div class="guia-card fade-on-scroll" id="guia-ejemplo" data-guia="ejemplo">
+                    <span class="guia-num">07</span>
+                    <h3>Así se ve una cabida por dentro</h3>
+                    <p>Un ejemplo de cabida con los datos del predio y del cliente omitidos: resultado, mix de producto, apilamiento, controles normativos y planta del piso típico.</p>
+                    <button type="button" class="btn btn-secondary guia-abrir">Descargar</button>
+                    <form class="guia-form" data-guia="ejemplo" onsubmit="return enviarGuia(event)">
+                        <input type="text" name="nombre" placeholder="Nombre" required>
+                        <input type="email" name="email" placeholder="Correo" required>
+                        <select name="etapa">
+                            <option value="">¿En qué etapa está tu proyecto? (opcional)</option>
+                            <option value="evaluando-terreno">Evaluando un terreno</option>
+                            <option value="proyecto-en-curso">Proyecto en curso</option>
+                            <option value="con-anteproyecto">Ya tengo anteproyecto</option>
+                        </select>
+                        <button type="submit" class="btn btn-primary">Enviarme la guía</button>
+                        <p class="guia-form-status"></p>
+                    </form>
+                </div>
             </div>
         </div>
     </section>
@@ -1033,7 +1051,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             bim:       'guias/HUIDOBRO_LeadMagnet_03_BIM.pdf',
             altura:    'guias/HUIDOBRO_LeadMagnet_04_AlturaMetros.pdf',
             producto:  'guias/HUIDOBRO_LeadMagnet_05_Producto.pdf',
-            pisos:     'guias/HUIDOBRO_LeadMagnet_06_MasPisos.pdf'
+            pisos:     'guias/HUIDOBRO_LeadMagnet_06_MasPisos.pdf',
+            ejemplo:   'guias/HUIDOBRO_LeadMagnet_07_EjemploCabida.pdf'
         };
 
         // ?ref= identifica la pieza que trajo la visita (un reel, un post, un DM).
