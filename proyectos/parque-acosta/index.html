@@ -24,7 +24,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@200..900&family=Hanken+Grotesk:wght@400..800&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="../proyecto.css?v=2611102225">
+<link rel="stylesheet" href="../proyecto.css?v=2611110913">
 <meta name="robots" content="noindex, nofollow">
 <style>.pend{display:none!important}</style>
 </head>
@@ -235,7 +235,7 @@ function trackCTA(label, section){
  "pisoInicial": "2",
  "acimut": 0,
  "_acimut": "El modelo está alineado con los ejes; 0° deja el piso cortado orientado como la planta (escalera arriba, balcones abajo).",
- "_cortes": "Cota de corte en coordenadas del modelo: losa medida + 1.35 m. Las losas están 1.40 m por debajo de la elevación que declara el IFC.",
+ "_cortes": "Cota de corte en coordenadas del modelo: losa medida + 1.35/1.40 m. Modelo de nov-2026 (IFC IE21-1001 exportado de Revit 2027): sus losas están 0.80 m más abajo que en el IFC de jun-2021 (piso 2: 2.05; piso 6: 13.45), por eso todos los cortes bajaron 0.80 m.",
  "modelos": [
   {
    "id": "arq",
@@ -258,49 +258,49 @@ function trackCTA(label, section){
    "id": "ss",
    "etiqueta": "SS",
    "nombre": "Semisótano",
-   "corte": -1.45,
+   "corte": -2.25,
    "planta": "ss"
   },
   {
    "id": "1",
    "etiqueta": "1",
    "nombre": "Piso 1",
-   "corte": 1.35,
+   "corte": 0.55,
    "planta": "1"
   },
   {
    "id": "2",
    "etiqueta": "2",
    "nombre": "Piso 2",
-   "corte": 4.25,
+   "corte": 3.45,
    "planta": "1"
   },
   {
    "id": "3",
    "etiqueta": "3",
    "nombre": "Piso 3",
-   "corte": 7.05,
+   "corte": 6.25,
    "planta": "1"
   },
   {
    "id": "4",
    "etiqueta": "4",
    "nombre": "Piso 4",
-   "corte": 9.95,
+   "corte": 9.15,
    "planta": "1"
   },
   {
    "id": "5",
    "etiqueta": "5",
    "nombre": "Piso 5",
-   "corte": 12.75,
+   "corte": 11.95,
    "planta": "1"
   },
   {
    "id": "6",
    "etiqueta": "6",
    "nombre": "Piso 6",
-   "corte": 15.65,
+   "corte": 14.85,
    "planta": "6",
    "nota": "Primer nivel de los dúplex 601 y 602. Pasa el mouse por un departamento para ver su número."
   },
@@ -308,7 +308,7 @@ function trackCTA(label, section){
    "id": "az",
    "etiqueta": "Az",
    "nombre": "Azotea",
-   "corte": 18.5,
+   "corte": 17.7,
    "planta": "az",
    "unidadesDe": "6",
    "nota": "Segundo nivel de los dúplex 601 y 602: estar, sauna y terrazas. Pasa el mouse por un departamento para ver su número."
@@ -955,6 +955,6 @@ function trackCTA(label, section){
  }
 }
 </script>
-<script type="module" src="../proyecto.js?v=2611102225"></script>
+<script type="module" src="../proyecto.js?v=2611110913"></script>
 </body>
 </html>
