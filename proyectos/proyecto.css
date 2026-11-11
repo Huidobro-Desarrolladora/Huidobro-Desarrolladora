@@ -1,0 +1,224 @@
+/* Estilos comunes de las páginas de proyecto (proyectos/<slug>/index.html). */
+:root{
+  --bg:oklch(0.975 0.005 264);
+  --bg-2:oklch(0.935 0.012 264);
+  --ink:oklch(0.17 0.02 264);
+  --muted:oklch(0.40 0.02 264);
+  --text-d:oklch(0.96 0.008 264);
+  --muted-d:oklch(0.79 0.015 264);
+  --line:oklch(0.17 0.02 264 / .18);
+  --line-d:oklch(1 0 0 / .18);
+  --cb:oklch(0.45 0.21 264);
+  --cb-hi:oklch(0.52 0.22 264);
+  --on-cb-muted:oklch(0.9 0.04 264);
+  /* Tipologías: escala de grises, la misma en la planta, la ficha y el cuadro de unidades */
+  --tA:oklch(0.30 0.004 264); --tA-on:#fff;
+  --tB:oklch(0.48 0.004 264); --tB-on:#fff;
+  --tC:oklch(0.66 0.004 264); --tC-on:oklch(0.17 0.02 264);
+  --tD:oklch(0.82 0.004 264); --tD-on:oklch(0.17 0.02 264);
+  --tE:oklch(0.92 0.004 264); --tE-on:oklch(0.17 0.02 264);
+  --eje:oklch(0.55 0.004 264);
+  --amarillo:#f7d428; /* fondo de las isometrías y del visor 3D */
+  --t-s:.875rem; --t-b:1.0625rem; --t-l:1.4375rem; --t-xl:clamp(1.875rem,4vw,2.5rem);
+  --display:"Big Shoulders Display","Arial Narrow",Impact,sans-serif;
+  --font:"Hanken Grotesk","Helvetica Neue",Arial,sans-serif;
+  --ease:cubic-bezier(.16,1,.3,1);
+  --gutter:clamp(1.25rem,5vw,3rem);
+  --max:74rem;
+}
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--font);font-size:var(--t-b);line-height:1.6;-webkit-font-smoothing:antialiased;-webkit-tap-highlight-color:transparent}
+img{max-width:100%;display:block}
+a{color:inherit}
+h1,h2,h3{margin:0;text-wrap:balance}
+p{margin:0;text-wrap:pretty}
+[hidden]{display:none!important}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+:focus-visible{outline:3px solid var(--cb);outline-offset:3px}
+.wrap{width:100%;max-width:var(--max);margin-inline:auto;padding-inline:var(--gutter)}
+.thin{font-weight:200}
+
+.btn{display:inline-flex;align-items:center;justify-content:center;min-height:3.25rem;padding:.85rem 1.6rem;border-radius:.2rem;font:inherit;font-weight:700;text-decoration:none;border:2px solid var(--ink);color:var(--ink);background:transparent;cursor:pointer;touch-action:manipulation;white-space:nowrap;transition:transform .16s var(--ease),background-color .2s ease,color .2s ease,border-color .2s ease}
+.btn:active{transform:scale(.97)}
+.btn-primary{background:var(--cb);border-color:var(--cb);color:#fff}
+.btn-row{display:flex;flex-wrap:wrap;gap:.75rem}
+@media(max-width:30rem){.btn-row .btn{width:100%}}
+.chip{min-height:2.75rem;padding:.4rem 1rem;border:1px solid var(--line);border-radius:.2rem;background:transparent;color:var(--ink);font:inherit;font-size:var(--t-s);font-weight:600;cursor:pointer;touch-action:manipulation;transition:background-color .2s ease,color .2s ease,border-color .2s ease,transform .16s var(--ease)}
+.chip:active{transform:scale(.97)}
+.chip[aria-pressed="true"]{background:var(--ink);border-color:var(--ink);color:var(--bg)}
+.chips{display:flex;flex-wrap:wrap;gap:.5rem}
+/* Lo que todavía es de prueba se ve en rojo para que no se publique por error */
+.pend{display:inline-block;font-size:var(--t-s);font-weight:700;color:oklch(0.5 0.2 28);border:1px dashed currentColor;padding:0 .35rem;border-radius:.2rem;line-height:1.5;vertical-align:middle}
+
+.nav{position:sticky;top:0;z-index:40;background:oklch(0.975 0.005 264 / .94);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+.nav .wrap{display:flex;align-items:center;justify-content:space-between;min-height:4rem;gap:1rem}
+.brand{display:flex;align-items:center;gap:.65rem;min-height:2.75rem;text-decoration:none;color:var(--ink)}
+.brand svg{width:1.5rem;height:auto}
+.brand b{font-family:var(--display);font-weight:800;font-size:1.5rem;letter-spacing:.05em;line-height:1}
+.nav-links{display:none;gap:1.75rem;font-size:var(--t-s);font-weight:600}
+.nav-links a{text-decoration:none}
+.nav .btn{min-height:2.75rem;padding:.5rem 1.1rem}
+@media(min-width:60rem){.nav-links{display:flex}}
+
+section{padding-block:clamp(3.5rem,8vw,6rem)}
+.alt{background:var(--bg-2)}
+/* Donde se muestra el edificio: blanco, el mismo fondo de las isometrías, las plantas y el visor */
+.blanco{background:#fff}
+.h2{font-family:var(--display);font-weight:900;text-transform:uppercase;font-size:clamp(2.7rem,8vw,5.2rem);line-height:1.02;max-width:16ch}
+.intro{margin-top:1rem;max-width:40rem;color:var(--muted);font-size:var(--t-l);line-height:1.45}
+.volver{display:inline-flex;align-items:center;min-height:2.75rem;font-size:var(--t-s);font-weight:600;color:var(--muted);text-decoration:none}
+
+/* Portada: la isometría en un marco amarillo a todo el ancho; debajo, el nombre a la izquierda y los datos
+   en filas a la derecha. El marco es el mismo que el del visor 3D. */
+.portada{padding-block:clamp(1rem,3vw,2rem) clamp(3rem,7vw,5rem)}
+.marco{position:relative;margin:0;background:var(--amarillo);overflow:hidden}
+.portada .marco{margin-top:1rem;height:min(78svh,46rem)}
+.marco .poster{position:absolute;inset:0;width:100%;height:100%;object-fit:contain;padding:clamp(1rem,3vw,2.5rem)}
+.portada-bajo{display:grid;gap:2rem;margin-top:2rem}
+@media(min-width:60rem){.portada-bajo{grid-template-columns:minmax(0,1.1fr) minmax(0,1fr);gap:4rem;align-items:start}}
+.portada h1{font-family:var(--display);font-weight:900;text-transform:uppercase;font-size:clamp(3.5rem,9vw,7.5rem);line-height:.88;margin:0}
+.portada .sub{margin-top:1rem;font-weight:800;text-transform:uppercase;letter-spacing:.02em;font-size:var(--t-l);line-height:1.25;max-width:32ch}
+.filas{margin:0;border-top:2px solid var(--ink)}
+.filas div{display:flex;justify-content:space-between;align-items:baseline;gap:1.5rem;padding:.75rem 0;border-bottom:1px solid var(--line)}
+.filas dt{font-size:var(--t-s);color:var(--muted);white-space:nowrap}
+.filas dd{margin:0;font-weight:700;text-align:right}
+
+/* Flechas (interiores y vista ampliada) */
+.c-flechas{display:flex;gap:.5rem}
+.c-flechas button{width:2.75rem;height:2.75rem;border:1px solid var(--line);border-radius:.2rem;background:transparent;color:var(--ink);font:inherit;font-size:1.1rem;cursor:pointer;touch-action:manipulation;transition:border-color .2s ease,transform .16s var(--ease)}
+.c-flechas button:active{transform:scale(.95)}
+@media(hover:hover) and (pointer:fine){.c-flechas button:hover{border-color:var(--ink)}}
+
+/* Edificio: un solo escenario con dos vistas, Planta y Modelo 3D */
+.barra{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:.75rem 1.5rem;margin-top:2rem;padding-block:1rem;border-block:1px solid var(--line)}
+.seg{display:inline-flex;border:1px solid var(--ink);border-radius:.2rem;overflow:hidden}
+.seg button{min-height:2.75rem;padding:.4rem 1.1rem;border:0;background:transparent;font:inherit;font-size:var(--t-s);font-weight:700;color:var(--ink);cursor:pointer;touch-action:manipulation}
+.seg button[aria-pressed="true"]{background:var(--ink);color:#fff}
+.tabs{display:flex;flex-wrap:wrap;gap:.4rem}
+.tabs .chip small{font-weight:500;opacity:.7;margin-left:.35rem}
+
+/* Planta: dibujo completo con ejes; todas las plantas comparten vista (misma escala y encuadre).
+   Al pasar el mouse (o tocar) el departamento se pinta en azul, sin borde, con su número en blanco. */
+.planta{position:relative;background:#fff;margin-top:1.25rem}
+.planta svg{display:block;width:100%;height:auto;max-height:84svh}
+.planta .u{outline:none}
+.planta .u polygon{fill:var(--u,var(--cb));fill-opacity:0;stroke:none;transition:fill-opacity .18s ease}
+.planta .u text{font-family:var(--font);font-weight:800;fill:#fff;opacity:0;transition:opacity .18s ease;pointer-events:none}
+.planta .u.on polygon,.planta .u:focus-visible polygon{fill-opacity:.82}
+.planta .u.on text,.planta .u:focus-visible text{opacity:1}
+@media(hover:hover) and (pointer:fine){.planta .u:hover polygon{fill-opacity:.82}.planta .u:hover text{opacity:1}}
+.ejes{pointer-events:none}
+.ejes line{stroke:var(--eje);stroke-width:2;stroke-dasharray:34 9 5 9;fill:none}
+.ejes circle{fill:#fff;stroke:var(--eje);stroke-width:2.5}
+.ejes text{font-family:var(--font);font-weight:600;fill:var(--muted)}
+.planta-vacia{display:grid;place-items:center;aspect-ratio:4/3;background:var(--bg-2)}
+.planta-pie{display:flex;flex-wrap:wrap;justify-content:space-between;gap:.5rem 1rem;margin-top:.6rem;font-size:var(--t-s);color:var(--muted)}
+
+/* Modelo 3D: mismo marco amarillo que la portada; cortes por piso dentro del visor, como la botonera de un ascensor */
+#bloque-3d .marco{margin-top:1.25rem;height:min(74svh,44rem)}
+.marco.en-3d .poster{visibility:hidden}
+.marco .visor{position:absolute;inset:0}
+.marco .visor canvas{display:block;width:100%;height:100%;touch-action:none;cursor:grab}
+.marco .visor canvas:active{cursor:grabbing}
+.marco .abrir{position:absolute;left:1rem;bottom:1rem;background:var(--ink);border-color:var(--ink);color:#fff}
+.cortes{position:absolute;top:1rem;right:1rem;display:flex;flex-direction:column;gap:.3rem;padding:.4rem;background:oklch(1 0 0 / .9);border-radius:.25rem;box-shadow:0 .3rem 1rem oklch(0.17 0.02 264 / .15);max-height:calc(100% - 2rem);overflow:auto}
+.cortes .lbl{font-size:.75rem;font-weight:700;color:var(--muted);text-align:center;padding:.1rem 0 .2rem}
+.cortes button{min-width:2.75rem;min-height:2.5rem;padding:0 .5rem;border:1px solid var(--line);border-radius:.2rem;background:#fff;font:inherit;font-size:var(--t-s);font-weight:700;color:var(--ink);cursor:pointer;touch-action:manipulation}
+.cortes button[aria-pressed="true"]{background:var(--ink);border-color:var(--ink);color:#fff}
+.capas{display:flex;flex-wrap:wrap;align-items:center;gap:.5rem;margin-top:.75rem}
+.capas .sep{flex:1}
+.estado{margin-top:.5rem;font-size:var(--t-s);color:var(--muted);min-height:1.6em}
+
+/* Tipología: muestra gris + nombre (sin pastillas de color) */
+.tag{display:inline-flex;align-items:center;gap:.55rem;font-size:var(--t-s);font-weight:700;color:var(--ink)}
+.tag::before{content:"";flex:none;width:.9rem;height:.9rem;border-radius:1px;background:var(--c);box-shadow:inset 0 0 0 1px oklch(0.17 0.02 264 / .15)}
+
+/* Cuadro de unidades: pisos en filas, posiciones en columnas */
+.mix{width:100%;border-collapse:collapse;margin-top:2rem;font-size:var(--t-s)}
+.mix th,.mix td{text-align:left;padding:.85rem .75rem .85rem 0;border-bottom:1px solid var(--line);vertical-align:middle}
+.mix thead th{color:var(--muted);font-weight:600}
+.mix td.n{font-family:var(--display);font-weight:800;font-size:var(--t-xl);line-height:1}
+.mix tfoot td,.mix tfoot th{border-bottom:0;border-top:2px solid var(--ink);font-weight:700}
+.mix-wrap{overflow-x:auto;-webkit-overflow-scrolling:touch}
+.mix-wrap .mix{min-width:30rem}
+
+/* Antes y después (análisis normativo) */
+.delta{width:100%;max-width:40rem;border-collapse:collapse;margin-top:2rem}
+.delta th,.delta td{text-align:left;padding:.9rem 0;border-bottom:1px solid var(--line)}
+.delta th{font-weight:500;font-size:var(--t-s);color:var(--muted);width:44%}
+.delta td{font-family:var(--display);font-weight:800;font-size:var(--t-xl);line-height:1}
+.delta td s{position:relative;display:inline-block;margin-right:.55rem;font-size:.62em;font-weight:600;color:var(--muted);text-decoration:none;vertical-align:.18em}
+.delta td s::after{content:"";position:absolute;left:-.12em;right:-.12em;top:52%;height:max(2px,.09em);background:currentColor}
+.delta td small{font-family:var(--font);font-size:var(--t-s);font-weight:600;color:var(--muted)}
+.delta .new,.delta td b{color:var(--cb)}
+
+/* Interiores: carrusel a altura fija, cada imagen entera; al tocarla se abre a pantalla completa */
+.i-pista{display:flex;gap:1rem;margin-top:2rem;overflow-x:auto;scroll-snap-type:x mandatory;scroll-behavior:smooth;scrollbar-width:none;-webkit-overflow-scrolling:touch;overscroll-behavior-x:contain;margin-right:calc(var(--gutter) * -1);padding-right:var(--gutter)}
+.i-pista::-webkit-scrollbar{display:none}
+.i-pista figure{flex:none;margin:0;scroll-snap-align:start}
+.i-pista button{display:block;padding:0;border:0;background:none;cursor:zoom-in;border-radius:0}
+.i-pista img{display:block;height:clamp(15rem,36vw,27rem);width:auto;max-width:none}
+@media(max-width:47.99rem){.i-pista img{width:84vw;height:auto}}
+/* Video en una galería: misma altura que las imágenes; con «reducir movimiento» queda el póster */
+.i-pista video{display:block;height:clamp(15rem,36vw,27rem);width:auto;max-width:none;background:var(--bg-2)}
+@media(max-width:47.99rem){.i-pista video{width:84vw;height:auto}}
+.i-pista .tipo{font-weight:500;color:var(--muted)}
+.i-pista figcaption{margin-top:.55rem;font-size:var(--t-s);font-weight:600;color:var(--muted)}
+.i-ctrl{display:flex;align-items:center;justify-content:space-between;gap:1rem;margin-top:1rem;font-size:var(--t-s);color:var(--muted)}
+.i-ctrl .c-flechas{align-items:center}
+.i-cuenta{font-variant-numeric:tabular-nums;font-weight:600;color:var(--ink);min-width:3.5rem;text-align:right}
+@media(prefers-reduced-motion:reduce){.i-pista{scroll-behavior:auto}}
+@media(hover:hover) and (pointer:fine){.i-pista button img{transition:opacity .2s ease}.i-pista button:hover img{opacity:.88}}
+
+.visor-img{position:fixed;inset:0;width:100vw;height:100dvh;max-width:none;max-height:none;margin:0;padding:0;border:0;background:oklch(0.12 0.01 264 / .96);color:#fff}
+.visor-img::backdrop{background:oklch(0.12 0.01 264 / .9)}
+/* Marco de la imagen ampliada: la imagen se centra con posición absoluta (Safari no resuelve el 100 % de alto
+   dentro de una grilla y la dejaba caer hacia abajo) */
+.vi-marco{position:absolute;inset:4.5rem 1rem}
+.vi-marco img{position:absolute;inset:0;margin:auto;max-width:100%;max-height:100%;width:auto;height:auto;object-fit:contain;user-select:none;-webkit-user-drag:none}
+.vi-barra{position:absolute;left:0;right:0;bottom:0;display:flex;align-items:center;justify-content:space-between;gap:1rem;padding:1rem clamp(1rem,4vw,2rem)}
+.vi-pie{font-size:var(--t-s);font-weight:600;color:oklch(0.85 0.01 264)}
+.visor-img .c-flechas button,.vi-cerrar{border-color:oklch(1 0 0 / .3);color:#fff;background:transparent}
+.vi-cerrar{position:absolute;top:1rem;right:clamp(1rem,4vw,2rem);width:2.75rem;height:2.75rem;border:1px solid oklch(1 0 0 / .3);border-radius:.2rem;font:inherit;font-size:1.4rem;line-height:1;cursor:pointer}
+.visor-img :focus-visible{outline-color:#fff}
+@media(hover:hover) and (pointer:fine){.visor-img .c-flechas button:hover,.vi-cerrar:hover{border-color:#fff}}
+@media(prefers-reduced-motion:no-preference){.visor-img[open] .vi-marco img{animation:aparece .2s ease}@keyframes aparece{from{opacity:0}}}
+
+/* Cifras: las nueve de todos los proyectos, en el mismo orden */
+.cifras{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:2rem 1.5rem;margin:2.5rem 0 0}
+@media(min-width:60rem){.cifras{grid-template-columns:repeat(3,minmax(0,1fr));gap:2.5rem 3rem}}
+.cifras div{padding-top:1rem;border-top:2px solid var(--ink)}
+.cifras dt{font-size:var(--t-s);color:var(--muted)}
+.cifras dd{margin:.25rem 0 0;font-family:var(--display);font-weight:800;font-size:clamp(2.2rem,5vw,3.4rem);line-height:1}
+.cifras dd small{font-family:var(--font);font-size:var(--t-s);font-weight:600}
+.cifras .pend{margin-top:.5rem}
+.fine{margin-top:1.5rem;font-size:var(--t-s);color:var(--muted)}
+
+/* Ubicación */
+.direccion{margin-top:1rem;max-width:40rem;font-size:var(--t-l);line-height:1.4;color:var(--muted)}
+.mapa{position:relative;margin:2rem 0 0;background:#fff;overflow:hidden}
+.mapa img{width:100%;height:clamp(18rem,55vw,34rem);object-fit:cover;object-position:50% 50%}
+.mapa-et{position:absolute;left:50%;top:calc((clamp(18rem,55vw,34rem)) / 2);transform:translate(-50%,-3.6rem);padding:.35rem .75rem;border-radius:.2rem;background:var(--cb);color:#fff;font-weight:700;font-size:var(--t-s);white-space:nowrap;box-shadow:0 .4rem 1rem oklch(0.17 0.02 264 / .25)}
+.mapa-et::after{content:"";position:absolute;left:50%;bottom:-.4rem;width:.8rem;height:.8rem;background:inherit;transform:translateX(-50%) rotate(45deg);z-index:-1}
+.mapa figcaption{padding:.6rem .8rem;font-size:var(--t-s);color:var(--muted)}
+
+/* Cierre */
+.cierre{background:var(--cb);color:#fff}
+.cierre .h2{max-width:18ch}
+.cierre p{margin-top:1rem;max-width:34rem;color:var(--on-cb-muted);font-size:var(--t-l);line-height:1.45}
+.cierre .btn-row{margin-top:2rem}
+.cierre .btn-primary{background:#fff;border-color:#fff;color:var(--cb)}
+.cierre .btn{border-color:#fff;color:#fff}
+.cierre .btn.btn-primary{color:var(--cb)}
+.cierre :focus-visible{outline-color:#fff}
+footer{padding-block:2rem;font-size:var(--t-s);color:var(--muted)}
+
+@media(hover:hover) and (pointer:fine){
+  .btn-primary:hover{background:var(--cb-hi);border-color:var(--cb-hi)}
+  .btn:not(.btn-primary):hover{background:var(--ink);color:var(--bg)}
+  .chip:not([aria-pressed="true"]):hover{border-color:var(--ink)}
+  .cierre .btn:not(.btn-primary):hover{background:#fff;color:var(--cb)}
+  .cierre .btn-primary:hover{background:var(--on-cb-muted);border-color:var(--on-cb-muted)}
+}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{animation:none!important;transition:none!important}}
